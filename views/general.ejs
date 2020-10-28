@@ -2,11 +2,31 @@
 <div class="container">
   <div class="heading text-center">General Member</div>
 
-  
-  <div class="row">
 
 
-  </div>
+
+    <%members.forEach(function(member){  %>
+      <div class="row">
+        <div class="col-sm-8">
+          <p><strong>Name:</strong><%=member.name %></p>
+          <p><strong>Membership_id:</strong><span><%=member._id %></span></p>
+          <p><strong>Current Position & Affiliation:</strong><%=member.position %></p>
+          <p><strong>Masters Research Field & Institution :</strong><%=member.masters %></p>
+          <p><strong>PhD Research Field & Institution:</strong><%=member.phd %></p>
+          <p><strong>Areas of Specialization:</strong><%=member.areaOfSpecialization %></p>
+          <p><strong>Current Research Interest:</strong><%=member.current %></p>
+          <p><strong>Contact Address & Mobile :</strong><%=member.contact %></p>
+          <p><strong>Email:</strong><%=member.mail %></p>
+        </div>
+        <div class="col-sm-4">
+
+        </div>
+      </div>
+    <%});%>
+
+
+
+
 
 </div>
 <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>

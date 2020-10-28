@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require('mongoose');
+const autoIncrement = require('mongoose-auto-increment');
 //const encrypt = require('mongoose-encryption');
 
 
@@ -16,18 +17,21 @@ app.use(express.static( 'public'));
 
 
 
-mongoose.connect("mongodb://localhost:27017/bbcbaDB",{useNewUrlParser:true,useUnifiedTopology: true });
+mongoose.connect("mongodb://localhost:27017/bbcbaDB",{useNewUrlParser:true,useUnifiedTopology: true ,useCreateIndex:true,useFindAndModify:false});
 
 
-const userschema={
+
+
+const userschema=new mongoose.Schema({
   email:String,
   password:String
-};
+});
 
 const User=new mongoose.model("User",userschema);
 
-const memberSchema={
+const memberSchema=new mongoose.Schema({
   name:String,
+
   position:String,
   masters:String,
   phd:String,
@@ -35,8 +39,10 @@ const memberSchema={
   current:String,
   contact:String,
   mail:String
-};
+});
 
+autoIncrement.initialize(mongoose.connection);
+memberSchema.plugin(autoIncrement.plugin, 'Member');
 const Member=new mongoose.model("Member",memberSchema);
 
 
@@ -65,7 +71,14 @@ app.get("/Executive",function(req,res){
 
 app.get("/General",function(req,res){
 
-      res.render("General");
+Member.find({}, function(err, members){
+
+        res.render("General",{
+          members:members
+        });
+
+  });
+
 
 
 });
@@ -241,6 +254,32 @@ app.get("/Adminpanel",function(req,res){
 app.get("/Addgeneral",function(req,res){
 
       res.render("Addgeneral");
+});
+app.post("/Addgeneral",function(req,res){
+  const member1=new Member({
+    name:req.body.name,
+
+    position:req.body.position,
+    masters:req.body.masters,
+    phd:req.body.phd,
+    areaOfSpecialization:req.body.areaOfSpecialization,
+    current:req.body.current,
+    contact:req.body.contact,
+    mail:req.body.mail
+
+  });
+
+      member1.save(function(err){
+        if(!err){
+            //console.log("succesful");
+          res.redirect("General");
+      
+
+        }else{
+          console.log(err);
+        }
+      });
+
 
 
 });
