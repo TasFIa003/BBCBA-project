@@ -26,6 +26,19 @@ const userschema={
 
 const User=new mongoose.model("User",userschema);
 
+const memberSchema={
+  name:String,
+  position:String,
+  masters:String,
+  phd:String,
+  areaOfSpecialization:String,
+  current:String,
+  contact:String,
+  mail:String
+};
+
+const Member=new mongoose.model("Member",memberSchema);
+
 
 
 
