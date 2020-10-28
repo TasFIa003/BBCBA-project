@@ -1,0 +1,178 @@
+.container-fluid {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+
+.navbar-brand {
+  left: 1%;
+  position: absolute;
+  margin-top: -10px;
+}
+
+.navbar-header {
+  left: 2%;
+  position: relative;
+}
+
+.nav-item {
+  text-align: center !important;
+}
+
+.navbar-nav li a:hover {
+  color: #1abc9c !important;
+}
+
+.dropdown-menu {
+  text-align: center;
+}
+
+.heading {
+  background: #E6E6E6;
+  border: gray;
+  color: gray;
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 50px 0;
+}
+
+.img img {
+  margin: 15px 46rem 0;
+  box-shadow: 0 0 0 #228;
+  width: inherit;
+  height: 25.2rem;
+}
+
+.img1-detail {
+  color: gray;
+  margin: 20px 35.5rem;
+  font-weight: bold;
+}
+
+.h3 {
+  font-weight: bold;
+  padding-bottom: 2.5rem;
+}
+
+.section {
+  color: gray;
+  font-weight: bold;
+  text-align: justify;
+  padding-bottom: 10rem;
+}
+
+.end {
+  color: gray;
+  margin-bottom: 20rem;
+}
+
+.thumbnail {
+  border: solid gray;
+  background: #E6E6E6;
+}
+
+.title1, .title2, .title3 {
+  background: gray;
+  border: solid gray 10px;
+  color: #fff;
+  margin: 0.0625rem 0;
+  text-align: center;
+}
+
+.pre-scrollbar {
+  max-height: 330px;
+  overflow-y: scroll;
+}
+
+.loginlist {
+  height: 330px;
+}
+
+.thumbnail {
+  margin-top: 80%;
+}
+
+.footer-padding {
+  margin-top: 100%;
+}
+
+.footer {
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #1abc9c;
+}
+
+.footer p {
+  margin-top: 50px;
+  padding-top: 20px;
+  font-size: 12px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/*****************************admin login css starts here**********************************/
+.body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  /*background-color: skyblue;
+  background-image: linear-gradient(to bottom right, skyblue, #1abc9c);*/
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#87e0fd+9,87e0fd+9,05abe0+48,87e0fd+69,87e0fd+69 */
+  background: rgb(135, 224, 253);
+  /* Old browsers */
+  background: -webkit-linear-gradient(bottom right, rgb(135, 224, 253) 9%, rgb(135, 224, 253) 9%, rgb(5, 171, 224) 48%, rgb(135, 224, 253) 69%, rgb(135, 224, 253) 69%);
+  background: -o-linear-gradient(bottom right, rgb(135, 224, 253) 9%, rgb(135, 224, 253) 9%, rgb(5, 171, 224) 48%, rgb(135, 224, 253) 69%, rgb(135, 224, 253) 69%);
+  background: linear-gradient(to bottom right, rgb(135, 224, 253) 9%, rgb(135, 224, 253) 9%, rgb(5, 171, 224) 48%, rgb(135, 224, 253) 69%, rgb(135, 224, 253) 69%);
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#87e0fd', endColorstr='#87e0fd', GradientType=1);
+
+
+}
+
+
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .h3{
+  color: #0f3057;
+}
+
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin .btn{
+  background: #1f6f8b;
+  color: #0f3057;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}

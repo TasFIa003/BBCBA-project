@@ -1,0 +1,57 @@
+<%-include('partials/adminheader'); -%>
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Add Life Member</h1>
+
+  </div>
+
+
+
+
+  </main>
+</div>
+</div>
+<div class="container">
+  <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+    <form class="" action="/lifemember" method="post">
+      <div class="form-group">
+          <label>Name</label>
+          <input class="form-control" type="text" name="name" autocomplete="off">
+          <label>Current position and Affiliation</label>
+          <input class="form-control" type="text" name="position"autocomplete="off">
+          <label>Masters Research Field & Institution</label>
+          <input class="form-control" type="text" name="masters"autocomplete="off">
+          <label>PhD Research Field & Institution</label>
+          <input class="form-control" type="text" name="phd"autocomplete="off">
+          <label>Areas of Specialization</label>
+          <input class="form-control" type="text" name="areaOfSpecialization"autocomplete="off">
+          <label>Current Research Interest</label>
+          <input class="form-control" type="text" name="current"autocomplete="off">
+          <label>Contact Address & Mobile</label>
+          <input class="form-control" type="text" name="contact"autocomplete="off">
+          <label>Email</label>
+          <input class="form-control" type="email" name="mail"autocomplete="off">
+          <label>photo upload</label>
+        </div>
+
+        <div class="input-group">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+            <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+          </div>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary photo" type="button" id="inputGroupFileAddon04">Button</button>
+          </div>
+        </div>
+        <button class="btn btn-dark mt-4" type="submit" name="button">Publish</button>
+        </form>
+  </div>
+
+</div>
+</form>
+
+<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+
+<%-include('partials/adminfooter'); -%>

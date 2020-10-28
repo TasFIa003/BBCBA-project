@@ -1,0 +1,45 @@
+<%-include('partials/adminheader'); -%>
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Workshop Schedule Update</h1>
+
+  </div>
+
+
+
+
+</main>
+</div>
+</div>
+<div class="container">
+  <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+    <form class="" action="/Workshopdate" method="post">
+
+      <div class="form-group">
+        <label>Title</label>
+        <input class="form-control" type="text" name="title" autocomplete="off">
+        <label>short discription</label>
+        <textarea class="form-control" name="shortDiscription" rows="5" cols="30"></textarea>
+        <label>upload Lecture Files</label>
+        <div class="input-group">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+            <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+          </div>
+
+        </div>
+      </div>
+
+
+      <button class="btn btn-dark mt-4" type="submit" name="button">Publish</button>
+    </form>
+  </div>
+
+</div>
+
+
+<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+
+<%-include('partials/adminfooter'); -%>
