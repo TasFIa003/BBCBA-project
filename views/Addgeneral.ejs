@@ -14,11 +14,16 @@
 </div>
 <div class="container">
   <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-    <form class="" action="/Addgeneral" method="post">
+
+
+    <form class="" action="/Addgeneral" method="post" enctype="multipart/form-data" >
+
+
 
         <div class="form-group">
             <label>Name</label>
             <input class="form-control" type="text" name="name" autocomplete="off">
+
             <label>Current position and Affiliation</label>
             <input class="form-control" type="text" name="position"autocomplete="off">
             <label>Masters Research Field & Institution</label>
@@ -34,20 +39,52 @@
             <label>Email</label>
             <input class="form-control" type="email" name="mail"autocomplete="off">
             <label>photo upload</label>
+            <input type="file" name="file" value="">
           </div>
 
-          <div class="input-group">
-            <div class="custom-file">
-              <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
-              <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
-            </div>
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary photo" type="button" id="inputGroupFileAddon04">Button</button>
-            </div>
-          </div>
+
           <button class="btn btn-dark mt-4" type="submit" name="button">Publish</button>
-          
+
           </form>
+          <div class="container mt-5 mr-5">
+            <table class="table" border="1">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Current position and Affiliation</th>
+                  <th>Masters Research Field & Institution</th>
+                  <th>PhD Research Field & Institution</th>
+                  <th>Areas of Specialization</th>
+                  <th>Current Research Interest</th>
+                  <th>Contact Address & Mobile</th>
+                  <th>Email</th>
+                  <th>photo upload</th>
+                  <th>Update</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <%mems.forEach(function(mem){%>
+                <tr>
+                  <td><%=mem.name%></td>
+                  <td><%=mem.position%></td>
+                  <td><%=mem.masters%></td>
+                  <td><%=mem.phd%></td>
+                  <td><%=mem.areaOfSpecialization%></td>
+                  <td><%=mem.current%></td>
+                  <td><%=mem.contact%></td>
+                  <td><%=mem.mail%></td>
+                  <td><img class="up-img3"src="/uploads/<%= mem.image %>" alt="profile picture"></td>
+                  <td><a class="edit" href="/genedit/<%=mem._id%>">Update </a></td>
+                  <td><a class="delete" href="/<%=mem._id%>">Delete</a></td>
+                </tr>
+                  <%});%>
+              </tbody>
+
+
+            </table>
+
+          </div>
   </div>
 
 </div>

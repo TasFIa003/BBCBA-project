@@ -1,5 +1,30 @@
 <%- include("partials/header"); -%>
 <div class="container">
   <div class="heading text-center">Lectures</div>
+
+  <%lectures.reverse().forEach(function(lecture){%>
+
+
+  <p class="h3 lec1"><%=lecture.title%></p>
+  <p class="h3 lec2">Short discription:</p>
+  <p class="boxtable"><%-lecture.shortDiscription%></p>
+  <p class="h3 lec4">Download:</p>
+
+
+  <ul class="link">
+    <li><a href="/uploads/<%=lecture.file%>"><%=lecture.file%></a></li>
+  </ul>
+
+
+  <hr>
+
+
+
+
+
+  <%});%>
+
+
+
 </div>
 <%- include("partials/footer"); -%>

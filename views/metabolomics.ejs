@@ -1,5 +1,15 @@
 <%- include("partials/header"); -%>
 <div class="container">
   <div class="heading text-center">Metabolomics</div>
+  <h2 class="lec1">Group members:</h2>
+  <%metas.forEach(function(meta){%>
+
+
+      <h4><%-meta.groupmembers%></h4>
+
+
+
+
+<%});%>
 </div>
 <%- include("partials/footer"); -%>

@@ -2,6 +2,21 @@
 
 <div class="container">
   <div class="heading text-center">Conferences</div>
+
+  <%cons.reverse().forEach(function(con){%>
+
+      <p class="h4 lec1"><%=con.title%></p>
+      <p class="h3 lec4">Link :<a href="<%=con.link%>"><%=con.link%></a></p>
+      <p class="h3 lec3"> Date :<%=con.day%></p>
+      <p class="h3 lec2"> Short discription:</p>
+      <p class="boxtable" ><%-con.shortDiscription%></p>
+      <p class="h3 lec4"> Download:</p>
+
+      <ul class="link">
+        <li><a href="/uploads/<%=con.file%>"><%=con.file%></a></li>
+      </ul>
+        <hr>
+<%});%>
 </div>
 
 <%- include("partials/footer"); -%>

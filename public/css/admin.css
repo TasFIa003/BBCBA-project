@@ -1,5 +1,6 @@
 body {
   font-size: .875rem;
+  overflow-x: auto;
 }
 
 .feather {
@@ -96,6 +97,18 @@ body {
   border-radius: 0;
 }
 
+.dropdown-menu li a{
+  text-decoration:none;,
+  text-align: center;
+  color: #333;
+  }
+
+  .dropdown-menu li a:hover{
+      color: #1abc9c !important;
+    }
+
+
+
 .h2{
   color: #89beb3;
 }
@@ -117,4 +130,65 @@ body {
 .form-group label{
   font-weight: bold;
   margin: 1rem 0 0;
+}
+
+
+/************************image upload***************************/
+
+.up-img1{
+  width: 200px;
+  height: 200px;
+
+}
+
+.up-img3{
+  width: 50px;
+  height: 50px;
+}
+
+.edit{
+  background:#89beb3;
+  border: 2px solid #89beb3;
+
+  color:black;
+  font-weight: bold;
+}
+ .edit:hover{
+  color: white;
+  text-decoration: none;
+}
+.delete{
+  background:#9f5f80;
+  border: 2px solid #9f5f80;
+
+  color:black;
+  font-weight: bold;
+}
+ .delete:hover{
+  color: white;
+  text-decoration: none;
+}
+
+
+
+/***************************table css*********************************/
+
+.table{
+  margin:5px 5px 5px 0;
+}
+/*************************membership check**********************************/
+.check{
+
+  color: #89beb3;
+
+}
+.check:hover{
+  color: #1abc9c ;
+  text-decoration: none;
+}
+.headline{
+  background-color: yellow;
+  border: solid yellow;
+  width: 100px;
+  height: 200px;
 }

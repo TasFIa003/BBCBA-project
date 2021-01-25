@@ -1,0 +1,42 @@
+<%-include('partials/adminheader'); -%>
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Conference Schedule Update</h1>
+
+  </div>
+
+
+
+
+</main>
+
+<div class="container">
+  <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+    <form class="" action="/workedit/<%=work._id%>"  method="post"enctype="multipart/form-data">
+
+      <div class="form-group">
+        <label>Title</label>
+        <input class="form-control" type="text" name="title" value="<%=work.title%>" autocomplete="off">
+        <label>Date</label>
+        <input class="form-control" type="text" name="day" value="<%=work.day%>" autocomplete="off">
+        <label>short discription</label>
+        <textarea class="form-control"id="editor" name="shortDiscription" value="<%-work.shortDiscription%>" rows="5" cols="30"></textarea>
+        <label>upload Lecture Files</label>
+        <input type="file" name="file" value="">
+        <p><a href="/uploads/<%=work.file%>"><%=work.file%></a></p>
+      </div>
+
+
+      <button class="btn btn-dark mt-4" type="submit" name="button">Publish</button>
+    </form>
+
+  </div>
+
+</div>
+
+
+<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+
+<%-include('partials/adminfooter'); -%>

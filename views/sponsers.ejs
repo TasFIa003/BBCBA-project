@@ -1,5 +1,13 @@
 <%- include("partials/header"); -%>
 <div class="container">
   <div class="heading text-center">Sponsers</div>
+
+  <%spons.forEach(function(spon,index){ %>
+    <p class="h4"><strong><span>Sponser number <%=index+1%></span>.<%-spon.shortDiscription%></strong></p>
+    <p class="h4"> <strong>Donate amount: </strong><%=spon.money%></p>
+
+    <hr>
+  <%});%>
+
 </div>
 <%- include("partials/footer"); -%>

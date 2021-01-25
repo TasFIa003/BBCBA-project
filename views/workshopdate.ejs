@@ -10,30 +10,51 @@
 
 
 </main>
-</div>
-</div>
+
 <div class="container">
   <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-    <form class="" action="/Workshopdate" method="post">
+    <form class="" action="/Workshopdate" method="post" enctype="multipart/form-data">
 
       <div class="form-group">
         <label>Title</label>
         <input class="form-control" type="text" name="title" autocomplete="off">
+        <label>Date:</label>
+        <input class="form-control"  type="text" name="day" value="">
         <label>short discription</label>
-        <textarea class="form-control" name="shortDiscription" rows="5" cols="30"></textarea>
+        <textarea class="form-control"id="editor" name="shortDiscription" rows="5" cols="30"></textarea>
         <label>upload Lecture Files</label>
-        <div class="input-group">
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
-            <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
-          </div>
-
-        </div>
+        <input type="file" name="file" value="">
       </div>
 
 
       <button class="btn btn-dark mt-4" type="submit" name="button">Publish</button>
     </form>
+    <div class="container mt-5 mr-5">
+      <table class="table" border="1">
+        <thead>
+          <tr>
+            <th>title</th>
+            <th>Date</th>
+            <th>short discription</th>
+            <th>File</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%works.forEach(function(work){%>
+          <tr>
+            <td><%=work.title%></td>
+            <td><%=work.day%></td>
+            <td><%-work.shortDiscription%></td>
+            <td><a href="/uploads/<%=work.file%>"><%=work.file%></a></td>
+            <td><a class="edit" href="/workedit/<%=work._id%>">Update </a></td>
+            <td><a class="delete" href="/workdelete/<%=work._id%>">Delete</a></td>
+          </tr>
+            <%});%>
+        </tbody>
+      </table>
+    </div>
   </div>
 
 </div>

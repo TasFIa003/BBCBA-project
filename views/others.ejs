@@ -1,5 +1,15 @@
 <%- include("partials/header"); -%>
 <div class="container">
   <div class="heading text-center">Others</div>
+  <h2 class="lec1">Group members:</h2>
+  <%grps.forEach(function(grp){%>
+
+
+      <h4><%-grp.groupmembers%></h4>
+
+
+
+
+<%});%>
 </div>
 <%- include("partials/footer"); -%>

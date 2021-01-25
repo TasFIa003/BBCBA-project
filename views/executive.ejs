@@ -1,172 +1,22 @@
 <%- include("partials/header"); -%>
 <div class="container">
+
   <div class="heading text-center">Executive Committee of BBCBA</div>
 
+      <div class="h3">
+        <%years.forEach(function(year,index){%>
 
+              <p class="text-center execute"id="comittee"><a href="/comitte#<%-year.year%>"><strong><%=index+1%>. Committee <%=year.year%></strong></a></p>
 
-  <div>
-    <strong class="text-primary">President:</strong>
-    <br><br>
+        <%});%>
 
-    <strong>Prof. Dr. M. Nurul Haque Mollah</strong>, Head of Bioinformatics Lab. (Dry), Dept. of Statistics, University of Rajshahi, Rajshahi-6205
-    <br><br>
-
-    <strong class="text-primary">General Secretary:</strong>
-    <br><br>
-
-    <strong>Prof. Dr. AMAM Zonaed Siddiki</strong>, Dept. of Pathology and Parasitology, Chittagong Veterinary and Animal Sciences University (CAVSU), Chittagong.
-    <br> <br>
-
-    <strong class="text-primary">Vice-President:</strong>
-    <br>
-    <br>
-
-    <strong>1. Prof. Dr. M. Nurun Nabi</strong>, Dhaka University (DU), DhDept. of Biochemistry and Molecular Biology,aka
-    <br>
-    <strong>2. Prof. Dr. Md. Saidur Rahman</strong>, Dept. of Computer Science and Engeenearing (CSE), BUET, Dhaka<br><br>
-
-    <strong>3. Prof. Dr. Md. Aminul Hoque</strong>, Dept. of Statistics, University of Rajshahi, Rajshahi-6205<br><br>
-
-    <strong>4. Prof. Dr. Md. Abul Kalam Azad</strong>, Professor, Dept. of Genetic Engineering and Biotechnology, Shahjalal University of Science and Technology (SUST), Sylhet<br><br>
-
-    <strong>5. Prof. Dr. Md. Abdul Alim</strong>, Professor, Dept. of Parasitology, Faculty of Veterinary Science, Bangladesh Agricultural University (BAU), Mymensingh<br><br>
-
-    <strong>6. Prof. Dr. Rameswar Debnath</strong>, Dept. of Computer Science and Engeenearing (CSE), Khulna University, Khulna<br><br>
-
-    <strong>7. Prof. Dr. Md. Kamal Uddin</strong>, Dept. of Statistics, Islamic University, Kushtia<br><br>
-
-    <strong>8. Dr. Md. Rafqul Islam</strong>, PSO, Bangladesh Agricultural Research Council.<br><br>
-
-    <strong>9. Dr. Md. Imrul Mosaddek Ahmed</strong>, SSO, Plant Breeding Division Bangladesh Agricultural Research Institute (BARI), Gazipur.<br><br>
-
-    <strong class="text-primary">Joint Secretary:</strong>
-    <br>
-    <br>
-
-    <strong>1. Prof. Md. Ohid Ullah</strong>, Professor, Dept. of Statistics, Shahjalal University of Science and Technology (SUST), Sylhet<br><br>
-
-    <strong>2. Dr. Moizur Rahman</strong>, Associate Professor, Dept. of Veterinary and Animal Science, Rajshahi University (RU), Rajshahi<br><br>
-
-    <strong class="text-primary">Treasurer:</strong>
-    <br>
-    <br>
-
-    <strong>Prof. Dr. Md. Ayub Ali</strong>, Dept. of Statistics, Rajshahi University (RU), Rajshahi<br><br>
-
-    <strong class="text-primary">Organizing Secretary:</strong>
-    <br>
-    <br>
-
-    <strong>Prof. Dr. Md. Abu Reza</strong>, Dept. of Genetic Engineering and Biotechnology, Rajshahi University (RU), Rajshahi<br><br>
-
-    <strong class="text-primary">Joint Organizing Secretary:</strong>
-    <br>
-    <br>
-
-    <strong>1. Prof. Dr. Md. Anwarul Haque</strong>, Dept. of Genetic Engineering and Biotechnology, Islamic University, Kushtia<br><br>
-
-    <strong>2. Dr. Ashad Alam</strong>, Associate Professor, Dept. of Statistics , Haji Danesh Science and Technology University (HDSTU), Dinajpur<br>
-
-    <strong class="text-primary">Press & Publication Secretary:</strong>
-    <br>
-    <br>
-
-    <strong>Dr. S. M. Shahinul Islam</strong>, Associate Professor, Institute of Biological Science (IBSc), Rajshahi University (RU), Rajshahi<br><br>
-
-    <strong class="text-primary">Joint Press & Publications Secretary:</strong>
-    <br>
-    <br>
-
-    <strong> Dr. Ahmed Humaun Kabir</strong>, Associate Professor, Dept. of Botany, Rajshahi University (RU), Rajshahi<br><br>
-
-    <strong class="text-primary">Publicity Secretary:</strong>
-    <br>
-    <br>
-
-    <strong>Dr. Md. Istiak Mahfuz</strong>, Associate Professor, Dept. of Zoology, Rajshahi University (RU), Rajshahi<br><br>
-
-    <strong> Dr. Md. Jahidul Islam (Sohag)</strong>, Associate Professor, BSMRSTU, Gopalgonj<br><br>
-
-    <strong class="text-primary">Overseas Secretary:</strong>
-    <br>
-    <br>
-
-    <strong>Prof. Dr. Munni Begum</strong>, Dept. of Statistics, Ball State University (BSU), USA<br><br>
-
-    <strong>Dr. Mohammad Ali Moni</strong>, Dept. of Biomedical Science, School of Medical Sciences, University of Sydney, Australia.<br><br>
-
-    <strong class="text-primary">Members:</strong>
-    <br>
-    <br>
-
-    <strong>Prof. Dr. Munirul Alam</strong>, ICDDR’B, Dhaka<br><br>
-
-    <strong>Prof. Dr. M. Tofazzal Islam</strong>, BSMRAU, Gazipur<br><br>
-
-    <strong>Prof. Dr. Md.Nurul Islam</strong>, Dept. of Botany, Dhaka University, Dhaka<br><br>
-
-    <strong>Prof. Dr. Aminul Haque</strong>, Agronomy, RU, Rajshahi<br><br>
-
-    <strong>Prof. Dr. M. Shahidul Islam</strong>, Statistics, SUST, Sylhet<br><br>
-
-    <strong>Prof. Dr. Mosharrof Hossain</strong>, Zoology, RU, Rajshahi<br><br>
-
-    <strong>Prof. Dr.M. Shahidul Islam</strong>, Biotec.,BAU,Mymensingh<br><br>
-
-    <strong>Prof. Dr.A. H.M. Khurshid Alam</strong>, Pharm, RU,Rajshahi<br><br>
-
-    <strong>Dr. S. M. Noman</strong>, BMB, CU, Chittagong <br><br>
-
-    <strong>Dr. M. Enamul Haque</strong>, PSO, Biotecnology division, BRRI, Gazipur<br><br>
-
-    <strong>Dr. M. Akhlasur Rahman</strong>, PSO, Plant Breeding Division, BRRI. Gazipur<br><br><br>
-
-    <strong>Dr. M. Shalim Uddin</strong>, SSO, Plant Breeding Division, BARI, Gazipur<br><br>
-
-    <strong>Dr. Md. Matiur Rahman</strong>, Statistics, RU<br><br>
-
-    <strong>Dr Md. Golber Hossain</strong>, VAS., RU. Rajshahi<br><br>
-
-    <strong>Dr. Atif Hasan Rahman</strong>, CSE, BUET, Dhaka<br><br>
-
-    <strong>Dr. Hafizur Rahman</strong>, IBSc, RU, Rajshahi<br><br>
-
-    <strong>Dr. M. Manir Hossain Mollah</strong>, Biostat., BUHS, Dhaka<br><br>
-
-    <strong>Dr. Nishith Kumar</strong>, Statistics, BSMRSTU, Gopalgonj<br><br>
-
-    <strong>Dr. Md. Shahjaman</strong>, Statistics, BRU, Rangpur<br><br>
-
-    <strong>Dr. Md. Nazmol Hasan</strong>, Statistics., BSMRAU, Gazipur<br><br>
-
-    <strong>Mr. M. Fokhruz Zaman</strong>, Founder of Bio-Bio-1, Dhaka<br><br>
-
-    <strong>Md. S. M. Zahid Hosen</strong>, SO, BCSIR, Chittagong<br><br>
-
-
-
-    <strong class="text-primary">Advisory Members:</strong>
-    <br>
-    <br>
-
-    <strong>*Dr. Firdausi Qadri</strong>, Founder Chairperson & Scientist, Institute for Developing Science and Health Initiatives (ideSHi), Dhaka & Emeritus Scientist & Ex-Director, center for vaccine science, ICDDR,B, Dhaka<br><br>
-
-    <strong>*Prof. Dr. Haseena Khan</strong>, Professor, Dept. of Biochemistry and Molecular Biology, DU, Dhaka.<br><br>
-
-    <strong>*Prof. Dr. Zeba Islam</strong>, Professor, Dept. of Biochemistry and Molecular Biology, DU, Dhaka.<br><br>
-
-    <strong>*Prof. Dr. Anwar Hossain</strong>, Dept. of Microbiology, Dhaka University, Dhaka<br><br>
-
-    <strong>*Prof. Dr. M. Monzur Hossain</strong>, Director, Institute of Biological Sciences, Rajshahi University, Rajshahi<br><br>
-
-
+      </div>
 
 
 
 
   </div>
 
-</div>
-
+<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 
 <%- include("partials/footer"); -%>

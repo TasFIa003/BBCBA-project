@@ -1,5 +1,86 @@
 <%- include("partials/header"); -%>
 <div class="container">
   <div class="heading text-center">Membership</div>
+
+  <p style="color: red;">Please fill up the prescribed membership form and send to BBCBA head office by air-mail/email ( <a href="/BBCBA Membership Form.rtf">click here to download the form</a> )Then complete the online registration with the following information.</p>
+
+  <form action="/membership" method="post"enctype="multipart/form-data">
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Applicants Name:</label>
+      <input type="text" class="form-control"name="name" placeholder="enter your name"autocomplete="off" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Mobile No:</label>
+      <input type="text" class="form-control" name="mobile" placeholder="enter your mobile number" autocomplete="off" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label >Email</label>
+      <input type="email" class="form-control" name="mail" placeholder="enter your email " autocomplete="off" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Contact Address & Homepage:</label>
+      <input type="text" class="form-control" name="address" placeholder="enter your contact address and homepage"autocomplete="off" required>
+
+    </div>
+    <div class="form-group col-md-6">
+      <label>Current Position & Affiliation:</label>
+      <input type="text" class="form-control" name="position" placeholder="Example: Professor, Dept. of Statistics, Rajshahi University, Rajshahi, Bangladesh" autocomplete="off"required>
+
+    </div>
+    <div class="form-group col-md-6">
+      <label>Masters Subject & Institution:</label>
+      <input type="text" class="form-control" name="insti" placeholder="Example:  Statistics, Rajshahi University, Rajshahi, Bangladesh"autocomplete="off" required>
+
+    </div>
+    <div class="form-group col-md-6">
+      <label>PhD Research Field & Institution </label>
+      <input type="text" class="form-control" name="phd" placeholder="Example: Bioinformatics, The Institute of Statistical Mathematics, Tokyo, Japan" autocomplete="off"required>
+
+    </div>
+    <div class="form-group col-md-6">
+      <label>Areas of Specialization: </label>
+      <input type="text" class="form-control" name="specialization" placeholder="Example:  Data Mining, Biostatistics &amp; Bioinformatics"autocomplete="off" required>
+
+    </div>
+    <div class="form-group col-md-6">
+      <label>Current Research Interest:</label>
+      <input type="text" class="form-control" name="research" placeholder="Write your current research interest" autocomplete="off"required>
+
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Your photo:(passport size)</label>
+      <input type="file" class="form-control" name="file" placeholder="" required>
+
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="inputState">Select Membership Category:</label>
+      <select id="inputState" class="form-control"name="option">
+        <option selected>Select Membership Category</option>
+        <option>Student Member</option>
+        <option>General Member</option>
+        <option>Life Member</option>
+        <option>Honorary Member</option>
+        <option>Advisory Member</option>
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Membership Fee Information( 300 TK ) to BKash Account No. 01715319178 (personal)</label>
+      <input type="text" class="form-control"name="payment" placeholder="Mode of payment information or Transection ID (Bank/Cash/bKash)"autocomplete="off" required>
+
+    </div>
+    </div>
+    <div class="form-group col-md-4">
+        <button type="submit" class="btn btn-primary"name="button">Sign in</button>
+    </div>
+
+</form>
+
+
+
+
 </div>
 <%- include("partials/footer"); -%>

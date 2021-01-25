@@ -14,26 +14,51 @@
 </div>
 <div class="container">
   <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-    <form class="" action="/trainingupdate" method="post">
+    <form class="" action="/trainingupdate" method="post"enctype="multipart/form-data">
 
       <div class="form-group">
         <label>Title</label>
         <input class="form-control" type="text" name="title" autocomplete="off">
+
+        <label>Date</label>
+        <input class="form-control" type="text" name="date" autocomplete="off">
         <label>short discription</label>
-        <textarea class="form-control" name="shortDiscription" rows="5" cols="30"></textarea>
+        <textarea class="form-control"id="editor" name="shortDiscription" rows="5" cols="30"></textarea>
         <label>upload Lecture Files</label>
-        <div class="input-group">
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
-            <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
-          </div>
+        <input class="form-control" type="file" name="file" value="">
 
         </div>
-      </div>
+
 
 
       <button class="btn btn-dark mt-4" type="submit" name="button">Publish</button>
     </form>
+    <div class="container mt-5 mr-5">
+      <table class="table" border="1">
+        <thead>
+          <tr>
+            <th>title</th>
+            <th>Date</th>
+            <th>short discription</th>
+            <th>File</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%trens.forEach(function(tren){%>
+          <tr>
+            <td><%=tren.title%></td>
+            <td><%=tren.date%></td>
+            <td><%-tren.shortDiscription%></td>
+            <td><a href="/uploads/<%=tren.file%>"><%=tren.file%></a></td>
+            <td><a class="edit" href="/trenedit/<%=tren._id%>">Update </a></td>
+            <td><a class="delete" href="/trendelete/<%=tren._id%>">Delete</a></td>
+          </tr>
+            <%})%>
+        </tbody>
+      </table>
+    </div>
   </div>
 
 </div>

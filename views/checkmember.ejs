@@ -1,0 +1,51 @@
+<%-include('partials/adminheader'); -%>
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center  pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Membership Update</h1>
+
+  </div>
+</main>
+<div class="container mr-5">
+  <table class="table" border="2">
+    <tr>
+      <th>Serial</th>
+      <th>Name</th>
+      <th>Mobile No</th>
+      <th>Email</th>
+      <th>Contact Address & Homepage</th>
+      <th>Current Position & Affiliation</th>
+      <th>Masters Subject & Institution</th>
+      <th>PhD Research Field & Institution</th>
+      <th>Areas of Specialization</th>
+      <th>Current Research Interest</th>
+      <th>Membership Category</th>
+      <th>payment status</th>
+      <th>Delete</th>
+    </tr>
+    <%mems.forEach(function(mem,index){%>
+      <tr>
+        <td><%=index+1%></td>
+        <td><%=mem.name%></td>
+        <td><%=mem.mobile%></td>
+        <td><%=mem.mail%></td>
+        <td><%=mem.address%></td>
+        <td><%=mem.position%></td>
+        <td><%=mem.insti%></td>
+        <td><%=mem.phd%></td>
+        <td><%=mem.specialization%></td>
+        <td><%=mem.research%></td>
+        <td><%=mem.option%></td>
+        <td><%=mem.payment%></td>
+        <td><a class="delete" href="/cmdelete/<%=mem._id%>">Delete</a></td>
+      </tr>
+
+
+
+
+  <%});%>
+  </table>
+</div>
+
+
+<%- include("partials/adminfooter"); -%>

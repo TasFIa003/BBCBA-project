@@ -14,41 +14,34 @@
 </div>
 <div class="container">
   <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-    <form class="" action="/pendingmember" method="post">
+    <form class="" action="/pendingmember" method="post" enctype="multipart/form-data">
       <div class="form-group">
-          <label>Name</label>
-          <input class="form-control" type="text" name="name" autocomplete="off">
-          <label>Current position and Affiliation</label>
-          <input class="form-control" type="text" name="position"autocomplete="off">
-          <label>Masters Research Field & Institution</label>
-          <input class="form-control" type="text" name="masters"autocomplete="off">
-          <label>PhD Research Field & Institution</label>
-          <input class="form-control" type="text" name="phd"autocomplete="off">
-          <label>Areas of Specialization</label>
-          <input class="form-control" type="text" name="areaOfSpecialization"autocomplete="off">
-          <label>Current Research Interest</label>
-          <input class="form-control" type="text" name="current"autocomplete="off">
-          <label>Contact Address & Mobile</label>
-          <input class="form-control" type="text" name="contact"autocomplete="off">
-          <label>Email</label>
-          <input class="form-control" type="email" name="mail"autocomplete="off">
-          <label>photo upload</label>
-        </div>
+        <label>Name</label>
+        <input class="form-control" type="text" name="name" autocomplete="off">
+        <label>Current position and Affiliation</label>
+        <input class="form-control" type="text" name="position"autocomplete="off">
+        <label>Masters Research Field & Institution</label>
+        <input class="form-control" type="text" name="masters"autocomplete="off">
+        <label>PhD Research Field & Institution</label>
+        <input class="form-control" type="text" name="phd"autocomplete="off">
+        <label>Areas of Specialization</label>
+        <input class="form-control" type="text" name="areaOfSpecialization"autocomplete="off">
+        <label>Current Research Interest</label>
+        <input class="form-control" type="text" name="current"autocomplete="off">
+        <label>Contact Address & Mobile</label>
+        <input class="form-control" type="text" name="contact"autocomplete="off">
+        <label>Email</label>
+        <input class="form-control" type="email" name="mail"autocomplete="off">
 
-        <div class="input-group">
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
-            <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
-          </div>
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary photo" type="button" id="inputGroupFileAddon04">Button</button>
-          </div>
-        </div>
-        <button class="btn btn-dark mt-4" type="submit" name="button">Publish</button>
-        </form>
-  </div>
+        <label>photo upload</label>
+        <input type="file" name="file" value="">
+      </div>
+      <button class="btn btn-dark mt-4" type="submit" name="button">Publish</button>
+      </form>
+      </div>
 
 </div>
+
 
 
 <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>

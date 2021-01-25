@@ -18,19 +18,38 @@
 
       <div class="form-group">
 
-        <label>upload Lecture Files</label>
-        <div class="input-group">
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
-            <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
-          </div>
+        <label>group members:</label>
+        <textarea class="form-control"id="editor" name="groupmembers" rows="5" cols="30"></textarea>
 
-        </div>
+
       </div>
 
 
       <button class="btn btn-dark mt-4" type="submit" name="button">Publish</button>
     </form>
+    <div class="container mt-5 mr-5">
+      <table class="table" border="1">
+        <thead>
+          <tr>
+
+            <th>Group members</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%phrs.forEach(function(phr){%>
+          <tr>
+
+            <td><%-phr.groupmembers%></td>
+
+            <td><a class="edit" href="/phredit/<%=phr._id%>">Update </a></td>
+            <td><a class="delete" href="/phrdelete/<%=phr._id%>">Delete</a></td>
+          </tr>
+            <%});%>
+        </tbody>
+      </table>
+    </div>
   </div>
 
 </div>

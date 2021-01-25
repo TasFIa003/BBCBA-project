@@ -1,4 +1,50 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.tiny.cloud/1/0dumu6rswim5po6fey70b2i02w0tp34gxzgyfy0i6vgnd0bb/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+  tinymce.init({
+  selector: "textarea#editor",
+  skin: "bootstrap",
+  plugins: "lists, link, image, media,permanentpen code table code advtable lists fullscreen",
+  contextmenu: 'configurepermanentpen',
+  toolbar:
+    "h1 h2 fontsizeselect fontselect bold italic strikethrough blockquote bullist numlist alignleft aligncenter alignright alignjustify | indent outdent | forecolor backcolor permanentpen code| link image media | removeformat help",
+    fontsize_formats: '8pt 10pt 12pt 14pt 16pt 18pt 24pt 36pt 48pt',
+    font_formats: 'Arial=arial,helvetica,sans-serif; Courier New=courier new,courier,monospace; AkrutiKndPadmini=Akpdmi-nAndale Mono=andale mono,times; Arial=arial,helvetica,sans-serif; Arial Black=arial black,avant garde; Book Antiqua=book antiqua,palatino; Comic Sans MS=comic sans ms,sans-serif; Courier New=courier new,courier; Georgia=georgia,palatino; Helvetica=helvetica; Impact=impact,chicago; Symbol=symbol; Tahoma=tahoma,arial,helvetica,sans-serif; Terminal=terminal,monaco; Times New Roman=times new roman,times; Trebuchet MS=trebuchet ms,geneva; Verdana=verdana,geneva; Webdings=webdings; Wingdings=wingdings,zapf dingbats',
+  menubar: false,
+  permanentpen_properties: {
+    fontname: 'arial,helvetica,sans-serif',
+
+    forecolor: '#E74C3C',
+    fontsize: '12pt',
+    hilitecolor: '',
+    bold: true,
+    italic: false,
+    strikethrough: false,
+    underline: false
+  },
+  setup: editor => {
+    // Apply the focus effect
+    editor.on("init", () => {
+      editor.getContainer().style.transition =
+        "border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out";
+    });
+    editor.on("focus", () => {
+      (editor.getContainer().style.boxShadow =
+        "0 0 0 .2rem rgba(0, 123, 255, .25)"),
+        (editor.getContainer().style.borderColor = "#80bdff");
+    });
+    editor.on("blur", () => {
+      (editor.getContainer().style.boxShadow = ""),
+        (editor.getContainer().style.borderColor = "");
+    });
+  }
+
+
+});
+
+
+</script>
 </body>
 </html>

@@ -10,14 +10,15 @@
 
 
   </main>
-</div>
-</div>
+
 <div class="container">
   <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-    <form class="" action="/lifemember" method="post">
+    <form class="" action="/lifemember" method="post" enctype="multipart/form-data">
       <div class="form-group">
           <label>Name</label>
           <input class="form-control" type="text" name="name" autocomplete="off">
+          <label>Homepage link</label>
+          <input class="form-control" type="text" name="homepage" autocomplete="off">
           <label>Current position and Affiliation</label>
           <input class="form-control" type="text" name="position"autocomplete="off">
           <label>Masters Research Field & Institution</label>
@@ -32,24 +33,54 @@
           <input class="form-control" type="text" name="contact"autocomplete="off">
           <label>Email</label>
           <input class="form-control" type="email" name="mail"autocomplete="off">
-          <label>photo upload</label>
-        </div>
 
-        <div class="input-group">
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
-            <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
-          </div>
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary photo" type="button" id="inputGroupFileAddon04">Button</button>
-          </div>
+          <label>photo upload</label>
+          <input type="file" name="file" value="">
         </div>
         <button class="btn btn-dark mt-4" type="submit" name="button">Publish</button>
         </form>
+        <div class="container mt-5 mr-5">
+          <table class="table" border="1">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Homepage</th>
+                <th>Current position and Affiliation</th>
+                <th>Masters Research Field & Institution</th>
+                <th>PhD Research Field & Institution</th>
+                <th>Areas of Specialization</th>
+                <th>Current Research Interest</th>
+                <th>Contact Address & Mobile</th>
+                <th>Email</th>
+                <th>photo upload</th>
+                <th>Update</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%lifes.forEach(function(life){%>
+              <tr>
+                <td><%=life.name%></td>
+                <td><%=life.homepage%></td>
+                <td><%=life.position%></td>
+                <td><%=life.masters%></td>
+                <td><%=life.phd%></td>
+                <td><%=life.areaOfSpecialization%></td>
+                <td><%=life.current%></td>
+                <td><%=life.contact%></td>
+                <td><%=life.mail%></td>
+                <td><img class="up-img3"src="/uploads/<%= life.image %>" alt="profile picture"></td>
+                <td><a class="edit" href="/lifeedit/<%=life._id%>">Update </a></td>
+                <td><a class="delete" href="/lifedelete/<%=life._id%>">Delete</a></td>
+              </tr>
+                <%})%>
+            </tbody>
+          </table>
+        </div>
+      </div>
   </div>
 
-</div>
-</form>
+
 
 <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 

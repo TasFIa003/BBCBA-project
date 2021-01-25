@@ -1,0 +1,57 @@
+<%-include('partials/adminheader'); -%>
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Update Life Member info</h1>
+
+  </div>
+
+
+
+
+  </main>
+
+<div class="container">
+  <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+    <form class="" action="/lifeedit/<%=life._id%>" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+          <label>Name</label>
+          <input class="form-control" type="text" name="name" value="<%=life.name%>" autocomplete="off">
+          <label>Homepage link</label>
+          <input class="form-control" type="text" name="homepage"value="<%=life.homepage%>" autocomplete="off">
+          <label>Current position and Affiliation</label>
+          <input class="form-control" type="text" name="position"value="<%=life.position%>"autocomplete="off">
+          <label>Masters Research Field & Institution</label>
+          <input class="form-control" type="text" name="masters" value="<%=life.masters%>" autocomplete="off">
+          <label>PhD Research Field & Institution</label>
+          <input class="form-control" type="text" name="phd" value="<%=life.phd%>" autocomplete="off">
+          <label>Areas of Specialization</label>
+          <input class="form-control" type="text" value="<%=life.areaOfSpecialization%>" name="areaOfSpecialization"autocomplete="off">
+          <label>Current Research Interest</label>
+          <input class="form-control" type="text" name="current" value="<%=life.current%>"autocomplete="off">
+          <label>Contact Address & Mobile</label>
+          <input class="form-control" type="text" name="contact" value="<%=life.contact%>"autocomplete="off">
+          <label>Email</label>
+          <input class="form-control" type="email" name="mail" value="<%=life.mail%>"autocomplete="off">
+
+          <label>photo upload</label>
+          <input type="file" name="file" value="">
+          <% if(life.image){%>
+            <img class="up-img"src="/uploads/<%= life.image %>" alt="profile picture">
+          <% } %>
+        </div>
+        <button class="btn btn-dark mt-4" type="submit" name="button">Publish</button>
+        </form>
+
+
+
+
+</div>
+  </div>
+
+
+
+<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+
+<%-include('partials/adminfooter'); -%>

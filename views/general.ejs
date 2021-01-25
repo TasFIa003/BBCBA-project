@@ -5,23 +5,31 @@
 
 
 
-    <%members.forEach(function(member){  %>
-      <div class="row">
-        <div class="col-sm-8">
-          <p><strong>Name:</strong><%=member.name %></p>
-          <p><strong>Membership_id:</strong><span><%=member._id %></span></p>
-          <p><strong>Current Position & Affiliation:</strong><%=member.position %></p>
-          <p><strong>Masters Research Field & Institution :</strong><%=member.masters %></p>
-          <p><strong>PhD Research Field & Institution:</strong><%=member.phd %></p>
-          <p><strong>Areas of Specialization:</strong><%=member.areaOfSpecialization %></p>
-          <p><strong>Current Research Interest:</strong><%=member.current %></p>
-          <p><strong>Contact Address & Mobile :</strong><%=member.contact %></p>
-          <p><strong>Email:</strong><%=member.mail %></p>
-        </div>
-        <div class="col-sm-4">
+    <%members.forEach(function(member,index){  %>
+
+        <div class="row life">
+          <div class="col-sm-3">
+            <% if(member.image){%>
+              <img class="up-img"src="/uploads/<%= member.image %>" alt="profile picture">
+            <% } %>
+
+          </div>
+          <div class="data1 col-sm-9">
+            <p><strong class="h3">Name: </strong><%=member.name %></p>
+            <p><strong class="h3">Membership_id: </strong><span><u>GM </u><%=index+1%></span></p>
+            <p><strong class="h3">Current Position & Affiliation: </strong><%=member.position %></p>
+            <p><strong class="h3">Masters Research Field & Institution : </strong><%=member.masters %></p>
+            <p><strong class="h3">PhD Research Field & Institution: </strong><%=member.phd %></p>
+            <p><strong class="h3">Areas of Specialization: </strong><%=member.areaOfSpecialization %></p>
+            <p><strong class="h3">Current Research Interest: </strong><%=member.current %></p>
+            <p><strong class="h3">Contact Address & Mobile : </strong><%=member.contact %></p>
+            <p><strong class="h3">Email:</strong><%=member.mail %></p>
+          </div>
 
         </div>
-      </div>
+
+
+      <hr>
     <%});%>
 
 

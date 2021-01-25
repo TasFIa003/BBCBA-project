@@ -1,5 +1,18 @@
 <%- include("partials/header"); -%>
 <div class="container">
   <div class="heading text-center">Photo Gallery</div>
+  <%photos.forEach(function(photo){%>
+
+
+
+      <div class="col-lg-6">
+
+          <img class="up-img3"src="/uploads/<%=photo.img%>" alt="pictures">
+          <p class="detail text-center"><strong><%=photo.detail%></strong></p>
+
+      </div>
+
+
+  <%});%>
 </div>
 <%- include("partials/footer"); -%>

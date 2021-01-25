@@ -19,20 +19,36 @@
 
       <div class="form-group">
         <label>Date</label>
-        <input class="form-control"type="text" name="" value="">
+        <input class="form-control"type="text" name="date" value="">
+        <label>Discription:</label>
+        <textarea class="form-control"id="editor" name="shortDiscription" rows="5" cols="30"></textarea>
       </div>
-
-      <div class="form-group">
-        <label>Description</label>
-
-        <textarea class="form-control"name="name" rows="8" cols="80"></textarea>
-
-      </div>
-
-
 
       <button class="btn btn-dark mt-4" type="submit" name="button">Publish</button>
     </form>
+    <div class="container mt-5 mr-5">
+      <table class="table" border="1">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Discription</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%nots.forEach(function(not){%>
+          <tr>
+            <td><%=not.date%></td>
+            <td><%-not.shortDiscription%></td>
+
+            <td><a class="edit" href="/notedit/<%=not._id%>">Update </a></td>
+            <td><a class="delete" href="/notdelete/<%=not._id%>">Delete</a></td>
+          </tr>
+            <%})%>
+        </tbody>
+      </table>
+    </div>
   </div>
 
 </div>
