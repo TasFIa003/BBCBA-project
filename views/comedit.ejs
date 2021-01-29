@@ -16,7 +16,8 @@
   <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
     <form class="" action="/comedit/<%=com._id%>" method="post" enctype="multipart/form-data">
       <div class="form-group">
-
+        <label>year:</label>
+        <input class="form-control" type="text" name="year" value="<%=com.year%>"autocomplete="off">
           <label>Position title</label>
           <input class="form-control" type="text" name="position" value="<%=com.position%>" autocomplete="off">
           <label>Name:</label>

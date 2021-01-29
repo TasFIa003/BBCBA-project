@@ -16,7 +16,7 @@
   <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
     <form class="" action="/makecomitte" method="post">
       <div class="form-group">
-          <label>year:</label>
+          <label>Committe title:</label>
           <input class="form-control" type="text" name="year" autocomplete="off">
           <label>Position title</label>
           <input class="form-control" type="text" name="position" autocomplete="off">
@@ -32,7 +32,7 @@
           <table class="table" border="1">
             <thead>
               <tr>
-
+                <th>Title</th>
                 <th>Position title</th>
                 <th>Name</th>
                 <th>Institution</th>
@@ -43,6 +43,7 @@
             <tbody>
               <%coms.forEach(function(com){%>
               <tr>
+                <td><%=com.year%></td>
                 <td><%=com.position%></td>
                 <td><%=com.name%></td>
                 <td><%=com.insti%></td>

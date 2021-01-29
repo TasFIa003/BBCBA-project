@@ -973,8 +973,11 @@ app.get("/checkmember",function(req,res){
 
 app.get("/executiveupdate",function(req,res){
 
-      res.render("executiveupdate");
-
+Year.find({},function(err,exs){
+    res.render("executiveupdate",{
+        exs:exs
+      });
+    });
 
 });
 
@@ -1791,7 +1794,25 @@ app.post("/dataupdate",function(req,res){
 
 });
 //////update files//////////////////
+app.get("/exedit/:id",function(req,res){
+  //res.render("lifeedit");
+  Year.findOneAndUpdate({_id:req.params.id},req.body,{new:true},function(err,docs){
+      //console.log(docs);
+      //console.log(docs.name);
+      res.render("exedit",{ex:docs});
+  });
+});
+app.post("/exedit/:id",upload,function(req,res){
+  //res.render("lifeedit");
+Year.findOneAndUpdate({_id:req.params.id},req.body,function(err){
+    if (err) {
+         //res.send(err);
 
+     } else {
+         res.send("succesful");
+     }
+  });
+});
 
 app.get("/genedit/:id",function(req,res){
   //res.render("lifeedit");
@@ -2393,6 +2414,16 @@ Committee.findOneAndUpdate({_id:req.params.id},req.body,function(err){
 
 
 /////delete file/////
+app.get("/exdelete/:id",function(req,res){
+
+    Year.findByIdAndDelete({_id:req.params.id},function(err){
+      if(err){
+            //console.log(err);
+        }else{
+            res.send("Deleted succesfully");
+        }
+    });
+});
 app.get("/:id",function(req,res){
 
     Member.findByIdAndDelete({_id:req.params.id},function(err){

@@ -4,9 +4,9 @@
   <div class="heading text-center">Executive Committee of BBCBA</div>
 
       <div class="h3">
-        <%years.forEach(function(year,index){%>
+        <%years.reverse().forEach(function(year,index){%>
 
-              <p class="text-center execute"id="comittee"><a href="/comitte#<%-year.year%>"><strong><%=index+1%>. Committee <%=year.year%></strong></a></p>
+              <p class="text-center execute"id="comittee"><a href="/comitte#<%-year.year%>"><strong><%=index+1%>. <%=year.year%></strong></a></p>
 
         <%});%>
 
