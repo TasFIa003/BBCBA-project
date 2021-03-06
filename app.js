@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const autoIncrement = require('mongoose-auto-increment');
 const multer=require('multer');
 const path=require('path');
-const date=require(__dirname+'/date.js')
+const date=require(__dirname+'/date.js');
 //const encrypt = require('mongoose-encryption');
 
 
@@ -425,6 +425,83 @@ const memSchema=new mongoose.Schema({
 
 const Membership=new mongoose.model("Membership",memSchema);
 
+
+///////////////////////////conference page Schema///////////////////////////////////
+const conpageSchema=new mongoose.Schema({
+    title:String,
+    date:String,
+    location:String,
+    file:String,
+    details:String,
+
+});
+
+const ConferencePage=new mongoose.model("ConferencePage",conpageSchema);
+
+const scopeSchema=new mongoose.Schema({
+    scopes:String,
+
+});
+
+const Scope=new mongoose.model("Scope",scopeSchema);
+
+const invitedSchema=new mongoose.Schema({
+    invited:String,
+
+});
+
+const Invited=new mongoose.model("Invited",invitedSchema);
+
+const importantSchema=new mongoose.Schema({
+    imp:String,
+
+});
+
+const Important=new mongoose.model("Important",importantSchema);
+
+const brochSchema=new mongoose.Schema({
+    file:String,
+
+});
+
+const Brochure=new mongoose.model("Brochure",brochSchema);
+
+const progrmSchema=new mongoose.Schema({
+    file:String,
+
+});
+
+const Program=new mongoose.model("Program",progrmSchema);
+
+const regSchema=new mongoose.Schema({
+    file:String,
+
+});
+
+const Registration=new mongoose.model("Registration",regSchema);
+
+const absSchema=new mongoose.Schema({
+    name:String,
+
+});
+
+const Abstract=new mongoose.model("Abstract",absSchema);
+
+const cocmSchema=new mongoose.Schema({
+    name:String,
+    title:String,
+
+});
+
+const Con_Committee=new mongoose.model("Con_Committee",cocmSchema);
+
+const comeSchema=new mongoose.Schema({
+    title:String,
+    name:String,
+
+});
+
+const Committee_Detail=new mongoose.model("Committee_Detail",comeSchema);
 /////////////////////////////bbcba main page js////////////////////////////
 
 
@@ -592,7 +669,7 @@ app.get("/Seminars",function(req,res){
 
             res.render("Seminars",{
               seminars:seminars,
-              day:date.getDate(),
+              //day:date.getDate(),
 
 
             });
@@ -881,13 +958,12 @@ app.get("/database",function(req,res){
 
 });
 
-app.get("",function(req,res){
+app.get("/conference_page",function(req,res){
 
+  ConferencePage.find({},function(err,conps){
 
-  Data.find({},function(err,datas){
-
-      res.render("database",{
-        datas:datas
+      res.render("conference_page",{
+        conps:conps
       });
 
   });
@@ -939,13 +1015,16 @@ app.post("/login",function(req,res){
       res.send("Wrong password.Please retype");
     }
   }else{
-    res.send("mailm id is not correct.Please check");
+    res.send("mail id is not correct.Please check");
   }
 });
 
 
 ///////////////admin panel js starts here//////////////////////////////
 app.get("/Adminpanel",function(req,res){
+
+  //res.render("login");
+
 
   Membership.find({},function(err,mems){
 
@@ -1443,7 +1522,32 @@ app.post("/conferenceschedule",upload,function(req,res){
         }
       });
 });
+app.get("/updateconferencepage",function(req,res){
+  //res.render("conferenceschedule");
+  ConferencePage.find({},function(err,conps){
+    res.render("updateconferencepage",{
+        conps:conps
+      });
+    });
+});
+app.post("/updateconferencepage",upload,function(req,res){
 
+  const con1=new ConferencePage({
+      title:req.body.title,
+      date:req.body.date,
+      location:req.body.location,
+      file:req.file.filename,
+      details:req.body.details,
+  });
+      con1.save(function(err){
+        if(!err){
+            //res.redirect("Conferences");
+            res.send("succesful");
+        }else{
+          console.log(err);
+        }
+      });
+});
 app.get("/genomicupdate",function(req,res){
   Geonomic.find({},function(err,gens){
     res.render("genomicupdate",{
@@ -1793,6 +1897,302 @@ app.post("/dataupdate",function(req,res){
       });
 
 });
+
+////////////////////Conference Page codes////////////////////////////
+app.get("/scopes",function(req,res){
+  Scope.find({},function(err,scoppes){
+    res.render("scopes",{
+        scoppes:scoppes
+      });
+    });
+});
+
+
+app.get("/scopeupdate",function(req,res){
+  Scope.find({},function(err,scops){
+    res.render("scopeupdate",{
+        scops:scops
+      });
+    });
+});
+app.post("/scopeupdate",upload,function(req,res){
+
+  const scope=new Scope({
+      scopes:req.body.scopes,
+  });
+      scope.save(function(err){
+        if(!err){
+
+            //res.redirect("Gallery");
+            res.send("succesful");
+        }else{
+          console.log(err);
+        }
+      });
+
+});
+
+app.get("/invited",function(req,res){
+  Invited.find({},function(err,inviteds){
+    res.render("invited",{
+        inviteds:inviteds
+      });
+    });
+});
+
+
+app.get("/invitedupdate",function(req,res){
+  Invited.find({},function(err,invis){
+    res.render("invitedupdate",{
+        invis:invis
+      });
+    });
+});
+app.post("/invitedupdate",upload,function(req,res){
+
+  const invite=new Invited({
+      invited:req.body.invited,
+  });
+      invite.save(function(err){
+        if(!err){
+
+            //res.redirect("Gallery");
+            res.send("succesful");
+        }else{
+          console.log(err);
+        }
+      });
+
+});
+
+app.get("/impdate",function(req,res){
+  Important.find({},function(err,imps){
+    res.render("impdate",{
+        imps:imps
+      });
+    });
+});
+
+app.get("/impdateupdate",function(req,res){
+  Important.find({},function(err,impts){
+    res.render("impdateupdate",{
+        impts:impts
+      });
+    });
+});
+app.post("/impdateupdate",upload,function(req,res){
+
+  const impr=new Important({
+      imp:req.body.imp,
+  });
+      impr.save(function(err){
+        if(!err){
+
+            //res.redirect("Gallery");
+            res.send("succesful");
+        }else{
+          console.log(err);
+        }
+      });
+
+});
+
+app.get("/brochure",function(req,res){
+Brochure.find({},function(err,brchs){
+    res.render("brochure",{
+        brchs:brchs
+      });
+    });
+});
+
+app.get("/brochureupdate",function(req,res){
+  Brochure.find({},function(err,brochs){
+    res.render("brochureupdate",{
+        brochs:brochs
+      });
+    });
+});
+app.post("/brochureupdate",upload,function(req,res){
+
+  const brc=new Brochure({
+      file:req.file.filename
+  });
+      brc.save(function(err){
+        if(!err){
+
+            //res.redirect("Gallery");
+            res.send("succesful");
+        }else{
+          console.log(err);
+        }
+      });
+
+});
+
+app.get("/programSchedule",function(req,res){
+Program.find({},function(err,progms){
+    res.render("programSchedule",{
+        progms:progms
+      });
+    });
+});
+
+app.get("/programupdate",function(req,res){
+Program.find({},function(err,prgms){
+    res.render("programupdate",{
+        prgms:prgms
+      });
+    });
+});
+app.post("/programupdate",upload,function(req,res){
+
+  const prg=new Program({
+      file:req.file.filename
+  });
+      prg.save(function(err){
+        if(!err){
+
+            //res.redirect("Gallery");
+            res.send("succesful");
+        }else{
+          console.log(err);
+        }
+      });
+
+});
+
+
+app.get("/reg",function(req,res){
+Registration.find({},function(err,regabs){
+    res.render("reg",{
+        regabs:regabs
+      });
+    });
+});
+
+app.get("/registration",function(req,res){
+Registration.find({},function(err,regs){
+    res.render("registration",{
+        regs:regs
+      });
+    });
+});
+app.post("/registration",upload,function(req,res){
+
+  const reg=new Registration({
+      file:req.file.filename
+  });
+      reg.save(function(err){
+        if(!err){
+
+            //res.redirect("Gallery");
+            res.send("succesful");
+        }else{
+          console.log(err);
+        }
+      });
+
+});
+
+app.get("/abstract",function(req,res){
+Abstract.find({},function(err,absts){
+    res.render("abstract",{
+        absts:absts
+      });
+    });
+});
+
+app.get("/abstractupdate",function(req,res){
+Abstract.find({},function(err,abs){
+    res.render("abstractupdate",{
+        abs:abs
+      });
+    });
+});
+app.post("/abstractupdate",upload,function(req,res){
+
+  const ab=new Abstract({
+      name:req.body.name
+  });
+      ab.save(function(err){
+        if(!err){
+
+            //res.redirect("Gallery");
+            res.send("succesful");
+        }else{
+          console.log(err);
+        }
+      });
+
+});
+
+app.get("/mainconferencepage",function(req,res){
+Con_Committee.find({},function(err,cms){
+    res.render("mainconferencepage",{
+        cms:cms
+      });
+    });
+});
+
+app.get("/conference_committeupdate",function(req,res){
+Con_Committee.find({},function(err,cocos){
+    res.render("conference_committeupdate",{
+        cocos:cocos
+      });
+    });
+});
+app.post("/conference_committeupdate",upload,function(req,res){
+
+  const c2=new Con_Committee({
+      name:req.body.name,
+      title:req.body.title
+  });
+      c2.save(function(err){
+        if(!err){
+
+            //res.redirect("Gallery");
+            res.send("succesful");
+        }else{
+          console.log(err);
+        }
+      });
+
+});
+
+app.get("/committee_page",function(req,res){
+Committee_Detail.find({},function(err,comes){
+    res.render("committee_page",{
+        comes:comes
+      });
+    });
+});
+
+app.get("/committee_details",function(req,res){
+Committee_Detail.find({},function(err,cns){
+    res.render("committee_details",{
+        cns:cns
+      });
+    });
+});
+app.post("/committee_details",upload,function(req,res){
+
+  const cn2=new Committee_Detail({
+      title:req.body.title,
+      name:req.body.name
+
+  });
+      cn2.save(function(err){
+        if(!err){
+
+            //res.redirect("Gallery");
+            res.send("succesful");
+        }else{
+          console.log(err);
+        }
+      });
+
+});
+
 //////update files//////////////////
 app.get("/exedit/:id",function(req,res){
   //res.render("lifeedit");
@@ -2407,12 +2807,141 @@ Committee.findOneAndUpdate({_id:req.params.id},req.body,function(err){
   });
 });
 
+app.get("/conpedit/:id",function(req,res){
+  //res.render("lifeedit");
+  ConferencePage.findOneAndUpdate({_id:req.params.id},req.body,{new:true},function(err,docs){
+      //console.log(docs);
+      //console.log(docs.name);
+      res.render("conpedit",{conp:docs});
+  });
+});
+app.post("/conpedit/:id",upload,function(req,res){
+  //res.render("lifeedit");
+  if(req.file){
+  var data={
+    title:req.body.title,
+    //id:req.body.id,
+    date:req.body.date,
+    location:req.body.location,
+    file:req.file.filename,
+    details:req.body.details,
+  }
+}else{
+  var data={
+    title:req.body.title,
+    //id:req.body.id,
+    date:req.body.date,
+    location:req.body.location,
+    details:req.body.details,
+  }
+}
+  ConferencePage.findOneAndUpdate({_id:req.params.id},data,function(err){
+    if (err) {
+         res.send(err);
 
+     } else {
+         res.send("succesful");
+     }
+  });
+});
 
+app.get("/scopedit/:id",function(req,res){
+  //res.render("lifeedit");
+  Scope.findOneAndUpdate({_id:req.params.id},req.body,{new:true},function(err,docs){
+      //console.log(docs);
+      //console.log(docs.name);
+      res.render("scopedit",{scop:docs});
+  });
+});
+app.post("/scopedit/:id",upload,function(req,res){
+  //res.render("lifeedit");
+Scope.findOneAndUpdate({_id:req.params.id},req.body,function(err){
+    if (err) {
+         //res.send(err);
 
+     } else {
+         res.send("succesful");
+     }
+  });
+});
+app.get("/invedit/:id",function(req,res){
+  //res.render("lifeedit");
+  Invited.findOneAndUpdate({_id:req.params.id},req.body,{new:true},function(err,docs){
+      //console.log(docs);
+      //console.log(docs.name);
+      res.render("invedit",{invi:docs});
+  });
+});
+app.post("/invedit/:id",upload,function(req,res){
+  //res.render("lifeedit");
+Invited.findOneAndUpdate({_id:req.params.id},req.body,function(err){
+    if (err) {
+         //res.send(err);
 
+     } else {
+         res.send("succesful");
+     }
+  });
+});
 
+app.get("/impedit/:id",function(req,res){
+  //res.render("lifeedit");
+  Important.findOneAndUpdate({_id:req.params.id},req.body,{new:true},function(err,docs){
+      //console.log(docs);
+      //console.log(docs.name);
+      res.render("impedit",{impt:docs});
+  });
+});
+app.post("/impedit/:id",upload,function(req,res){
+  //res.render("lifeedit");
+Important.findOneAndUpdate({_id:req.params.id},req.body,function(err){
+    if (err) {
+         //res.send(err);
 
+     } else {
+         res.send("succesful");
+     }
+  });
+});
+app.get("/cocoedit/:id",function(req,res){
+  //res.render("lifeedit");
+  Con_Committee.findOneAndUpdate({_id:req.params.id},req.body,{new:true},function(err,docs){
+      //console.log(docs);
+      //console.log(docs.name);
+      res.render("cocoedit",{coco:docs});
+  });
+});
+app.post("/cocoedit/:id",upload,function(req,res){
+  //res.render("lifeedit");
+Con_Committee.findOneAndUpdate({_id:req.params.id},req.body,function(err){
+    if (err) {
+         //res.send(err);
+
+     } else {
+         res.send("succesful");
+     }
+  });
+});
+
+app.get("/cnedit/:id",function(req,res){
+  //res.render("lifeedit");
+  Committee_Detail.findOneAndUpdate({_id:req.params.id},req.body,{new:true},function(err,docs){
+      //console.log(docs);
+      //console.log(docs.name);
+      res.render("cnedit",{cn:docs});
+  });
+});
+app.post("/cnedit/:id",upload,function(req,res){
+  //res.render("lifeedit");
+Committee_Detail.findOneAndUpdate({_id:req.params.id},req.body,function(err){
+    if (err) {
+         //res.send(err);
+
+     } else {
+         res.send("succesful");
+     }
+  });
+});
 /////delete file/////
 app.get("/exdelete/:id",function(req,res){
 
@@ -2712,8 +3241,109 @@ app.get("/sodelete/:id",function(req,res){
         }
     });
 });
+app.get("/conpdelete/:id",function(req,res){
 
+      ConferencePage.findByIdAndDelete({_id:req.params.id},function(err){
+      if(err){
+            //console.log(err);
+        }else{
+            res.send("Deleted succesfully");
+        }
+    });
+});
+app.get("/scopdelete/:id",function(req,res){
 
+      Scope.findByIdAndDelete({_id:req.params.id},function(err){
+      if(err){
+            //console.log(err);
+        }else{
+            res.send("Deleted succesfully");
+        }
+    });
+});
+app.get("/invdelete/:id",function(req,res){
+
+      Invited.findByIdAndDelete({_id:req.params.id},function(err){
+      if(err){
+            //console.log(err);
+        }else{
+            res.send("Deleted succesfully");
+        }
+    });
+});
+app.get("/impdelete/:id",function(req,res){
+
+      Important.findByIdAndDelete({_id:req.params.id},function(err){
+      if(err){
+            //console.log(err);
+        }else{
+            res.send("Deleted succesfully");
+        }
+    });
+});
+
+app.get("/brochdelete/:id",function(req,res){
+
+      Brochure .findByIdAndDelete({_id:req.params.id},function(err){
+      if(err){
+            //console.log(err);
+        }else{
+            res.send("Deleted succesfully");
+        }
+    });
+});
+
+app.get("/prgmdelete/:id",function(req,res){
+
+      Program .findByIdAndDelete({_id:req.params.id},function(err){
+      if(err){
+            //console.log(err);
+        }else{
+            res.send("Deleted succesfully");
+        }
+    });
+});
+app.get("/regdelete/:id",function(req,res){
+
+      Registration .findByIdAndDelete({_id:req.params.id},function(err){
+      if(err){
+            //console.log(err);
+        }else{
+            res.send("Deleted succesfully");
+        }
+    });
+});
+
+app.get("/abdelete/:id",function(req,res){
+
+      Abstract.findByIdAndDelete({_id:req.params.id},function(err){
+      if(err){
+            //console.log(err);
+        }else{
+            res.send("Deleted succesfully");
+        }
+    });
+});
+app.get("/cocodelete/:id",function(req,res){
+
+      Con_Committee.findByIdAndDelete({_id:req.params.id},function(err){
+      if(err){
+            //console.log(err);
+        }else{
+            res.send("Deleted succesfully");
+        }
+    });
+});
+app.get("/cndelete/:id",function(req,res){
+
+      Committee_Detail.findByIdAndDelete({_id:req.params.id},function(err){
+      if(err){
+            //console.log(err);
+        }else{
+            res.send("Deleted succesfully");
+        }
+    });
+});
 app.listen(3000, function() {
   console.log("Server started on port 3000");
 });

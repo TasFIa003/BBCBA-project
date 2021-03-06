@@ -1,0 +1,14 @@
+<%- include("partials/header"); -%>
+<div class="container">
+  <div class="heading text-center">Brochure</div>
+  <%brchs.forEach(function(brch,index){%>
+
+
+      <h4><%=index+1%>.<a href="/uploads/<%=brch.file%>"> <%=brch.file%></a></h4>
+
+
+
+
+<%});%>
+</div>
+<%- include("partials/footer"); -%>

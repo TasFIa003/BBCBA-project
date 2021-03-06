@@ -1,0 +1,26 @@
+<%- include("partials/header"); -%>
+<div class="container">
+
+  <div class="heading text-center">Scopes</div>
+
+      <div class="h3">
+        <%scoppes.forEach(function(scoppe){%>
+
+
+            <h4><%-scoppe.scopes%></h4>
+
+
+
+
+      <%});%>
+
+      </div>
+
+
+
+
+  </div>
+
+<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+<%-include("partials/con_footer"); -%>

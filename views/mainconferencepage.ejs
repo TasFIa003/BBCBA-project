@@ -1,0 +1,27 @@
+<%- include("partials/header"); -%>
+<div class="container">
+
+  <div class="heading text-center">Conference Committee</div>
+
+      <div class="h3">
+        <%cms.forEach(function(cm,index){%>
+              <h3><%-cm.name%></h3>
+
+        <%});%>
+          <h2 class="text-center"style="color:red;">Sub Committee</h2>
+        <%cms.forEach(function(cm,index){%>
+
+
+              <h3 id="committee_page"><a href="/committee_page#<%-cm.title%>"><strong><%=index+1%>. <%=cm.title%></strong></a></h3>
+
+        <%});%>
+      </div>
+
+
+
+
+  </div>
+
+<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+<%- include("partials/con_footer"); -%>

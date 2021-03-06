@@ -1,0 +1,14 @@
+<%- include("partials/header"); -%>
+<div class="container">
+  <div class="heading text-center">Program Schedule</div>
+  <%progms.forEach(function(progm,index){%>
+
+
+      <h4><%=index+1%>.<a href="/uploads/<%=progm.file%>"> <%=progm.file%></a></h4>
+
+
+
+
+<%});%>
+</div>
+<%- include("partials/footer"); -%>

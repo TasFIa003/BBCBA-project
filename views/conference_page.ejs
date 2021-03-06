@@ -1,0 +1,79 @@
+<%- include("partials/header"); -%>
+<div class="container">
+  <%conps.forEach(function(conp){%>
+  <div class="heading text-center"><%=conp.title%></div>
+
+  <div class="headline1">
+        <div class="text-center">
+          <br>
+          <h3><b style="color:#1f6f8b;">Conference Date: </b><%=conp.date%></h3>
+          <h3><b style="color:#1f6f8b;">Location: </b><%=conp.location%></h3>
+        </div>
+  </div>
+  <div class="up-img4">
+    <% if(conp.file){%>
+      <img class="up-img4"src="/uploads/<%= conp.file %>" alt="profile picture">
+    <% } %>
+  </div>
+  <div>
+    <p><%-conp.details%></p>
+  </div>
+  <%});%>
+  <div class="headline2">
+    <nav class="navbar1 navbar-default">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-md-1">
+            <h4 style="color:#1f6f8b;font-weight:bolder;">Links:</h4>
+          </div>
+          <div  class="col-md-11">
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav navbar-right">
+            <!-- 6 -->
+            <li class="nav-item " id="mainconferencepage">
+              <a class="nav-link"href="/mainconferencepage">Conference Committee</a>
+            </li>
+            <li class="nav-item " id="scopes">
+              <a class="nav-link"href="/scopes">Scopes</a>
+            </li>
+            <li class="nav-item " id="invited">
+              <a class="nav-link"href="/invited">Invited Speaker</a>
+            </li>
+
+            <li class="nav-item" id="reg">
+              <a class="nav-link"href="/reg">Registration</a>
+            </li>
+            <li class="nav-item" id="abstract">
+              <a class="nav-link"href="/abstract">Abstract Submission</a>
+            </li>
+
+            <li class="nav-item " id="programSchedule">
+              <a class="nav-link"href="/programSchedule">Program Schedule</a>
+            </li>
+            <li class="nav-item " id="impdate">
+              <a class="nav-link"href="/impdate">Important Dates</a>
+            </li>
+            <li class="nav-item " id="brochure">
+              <a class="nav-link"href="/brochure">Brochure</a>
+            </li>
+
+          </ul>
+        </div>
+
+          </div >
+
+
+
+
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+</div>
+
+<%- include("partials/con_footer"); -%>
