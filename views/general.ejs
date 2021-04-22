@@ -1,0 +1,41 @@
+<%- include("partials/header"); -%>
+<div class="container">
+  <div class="heading text-center">General Member</div>
+
+
+
+
+    <%members.forEach(function(member,index){  %>
+
+        <div class="row life">
+          <div class="col-sm-3">
+            <% if(member.image){%>
+              <img class="up-img"src="/uploads/<%= member.image %>" alt="profile picture">
+            <% } %>
+
+          </div>
+          <div class="data1 col-sm-9">
+            <p><strong class="h3">Name: </strong><%=member.name %></p>
+            <p><strong class="h3">Membership_id: </strong><span><u>GM </u><%=index+1%></span></p>
+            <p><strong class="h3">Current Position & Affiliation: </strong><%=member.position %></p>
+            <p><strong class="h3">Masters Research Field & Institution : </strong><%=member.masters %></p>
+            <p><strong class="h3">PhD Research Field & Institution: </strong><%=member.phd %></p>
+            <p><strong class="h3">Areas of Specialization: </strong><%=member.areaOfSpecialization %></p>
+            <p><strong class="h3">Current Research Interest: </strong><%=member.current %></p>
+            <p><strong class="h3">Contact Address & Mobile : </strong><%=member.contact %></p>
+            <p><strong class="h3">Email:</strong><%=member.mail %></p>
+          </div>
+
+        </div>
+
+
+      <hr>
+    <%});%>
+
+
+
+
+
+</div>
+<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+<%- include("partials/footer"); -%>

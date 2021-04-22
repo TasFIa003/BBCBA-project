@@ -1,0 +1,22 @@
+<%- include("partials/header"); -%>
+<div class="container">
+  <div class="heading text-center">Trainings</div>
+  <%trains.reverse().forEach(function(train){%>
+
+      <p class="h3 lec1"><%=train.title%></p>
+
+      <p class="h3 lec3">Date :<%=train.date%></p>
+
+      <p class="h3 lec2">Short description:</p>
+
+      <p class="boxtable"><%-train.shortDiscription%></p>
+
+      <p class="h3 lec4">Download:</p>
+
+      <ul  class="link">
+        <li><a href="/uploads/<%=train.file%>"><%=train.file%></a></li>
+      </ul>
+        <hr>
+<%});%>
+</div>
+<%- include("partials/footer"); -%>

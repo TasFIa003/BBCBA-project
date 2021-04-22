@@ -1,0 +1,11 @@
+<%- include("partials/header"); -%>
+<div class="container">
+  <div class="heading text-center">Notice</div>
+  <%notices.forEach(function(notice,index){%>
+    <p class="h3"><strong>Date:<%=notice.date%></strong></p>
+    <p class="h3 lec4"> <strong>Description:</strong></p>
+    <p class="boxtable"><%-notice.shortDiscription%></p>
+    <hr>
+  <%});%>
+</div>
+<%- include("partials/footer"); -%>

@@ -1,0 +1,60 @@
+<%-include('partials/adminheader'); -%>
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Scope Information</h1>
+
+  </div>
+
+
+
+
+</main>
+
+<div class="container">
+  <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+    <form class="" action="/scopeupdate" method="post">
+
+      <div class="form-group">
+
+        <label>Scope details:</label>
+        <textarea class="form-control"id="editor" name="scopes" rows="5" cols="30"></textarea>
+
+
+      </div>
+
+
+      <button class="btn btn-dark mt-4" type="submit" name="button">Publish</button>
+    </form>
+    <div class="container mt-5 mr-5">
+      <table class="table" border="1">
+        <thead>
+          <tr>
+
+            <th>Details</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%scops.forEach(function(scop){%>
+          <tr>
+
+            <td><%-scop.scopes%></td>
+
+            <td><a class="edit" href="/scopedit/<%=scop._id%>">Update</a></td>
+            <td><a class="delete" href="/scopdelete/<%=scop._id%>">Delete</a></td>
+          </tr>
+            <%});%>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+
+<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+
+<%-include('partials/adminfooter'); -%>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark sticky-top flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Company name</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" href="#">Sign out</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="sidebar-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item" id="Adminpanel" >
+              <a class="nav-link active" href="/Adminpanel">
+
+                Dashboard <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item"id="sponserupdate">
+              <a class="nav-link " href="/sponserupdate">
+
+                Sponsers
+              </a>
+            </li>
+            <li class="nav-item"id="noticeupdate">
+              <a class="nav-link" href="/noticeupdate">
+
+                Notice Update
+              </a>
+            </li>
+            <li class="nav-item"id="updatenews">
+              <a class="nav-link" href="/updatenews">
+
+                Upcoming News update
+              </a>
+            </li>
+            <li class="nav-item"id="societyupdate">
+              <a class="nav-link" href="/societyupdate">
+                  All Society
+
+              </a>
+            </li>
+            <li class="nav-item"id="dataupdate">
+              <a class="nav-link" href="/dataupdate">
+
+                database
+              </a>
+            </li>
+            <li class="nav-item"id="softupdate">
+              <a class="nav-link" href="/softupdate">
+
+                Software
+              </a>
+            </li>
+
+
+          </ul>
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>Members Add</span>
+
+          </h6>
+          <ul class="nav flex-column mb-2">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"href="#">Executive Committee <span class="caret"></span></a>
+              <ul class="dropdown-menu text-center">
+                <li class="nav-item" id="executiveupdate"><a href="/executiveupdate">Make Cimmittee folder</a></li>
+                <li class="nav-item" id="makecomitte"><a href="/makecomitte">Add Executive Committee members informations</a></li>
+
+
+              </ul>
+            </li>
+
+            <li class="nav-item" id="Addgeneral">
+              <a class="nav-link" href="/Addgeneral">
+
+                General members
+              </a>
+            </li>
+            <li class="nav-item" id="lifemember">
+              <a class="nav-link" href="/lifemember">
+
+                Life members
+              </a>
+            </li>
+            <li class="nav-item" id="studentmember">
+              <a class="nav-link" href="/studentmember">
+
+                Student members
+              </a>
+            </li>
+            <li class="nav-item" id="honorarymember">
+              <a class="nav-link" href="/honorarymember">
+                 Honorary members
+               </a>
+
+            </li>
+            <li class="nav-item"id="advisorymember">
+              <a class="nav-link" href="/advisorymember">Advisory members
+              </a>
+            </li>
+            <li class="nav-item"id="pendingmember">
+              <a class="nav-link" href="/pendingmember">Pending members
+              </a>
+            </li>
+            <li class="nav-item"id="photoupload">
+              <a class="nav-link" href="/photoupload">Upload photos
+              </a>
+            </li>
+
+          </ul>
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>Events</span>
+            <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+
+            </a>
+          </h6>
+          <ul class="nav flex-column mb-2">
+            <li class="nav-item"id="lecturesadd">
+              <a class="nav-link" href="/lecturesadd">
+
+                Lectures
+              </a>
+            </li>
+            <li class="nav-item"id="seminarschedule">
+              <a class="nav-link" href="/seminarschedule">
+
+                Seminars
+              </a>
+            </li>
+            <li class="nav-item"id="Workshopdate">
+              <a class="nav-link" href="/Workshopdate">
+
+                Workshops
+              </a>
+            </li>
+            <li class="nav-item" id="trainingupdate">
+              <a class="nav-link" href="/trainingupdate">
+
+                Trainings
+              </a>
+            </li>
+            <li class="nav-item" id="conferenceschedule">
+              <a class="nav-link" href="/conferenceschedule">
+
+                Conferences
+              </a>
+            </li>
+            <li class="nav-item" id="updateconferencepage">
+              <a class="nav-link" href="/updateconferencepage">
+
+                Conferences-Page update
+              </a>
+
+              </li>
+
+
+          </ul>
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span style="color:skyblue;">Conference-Page Quick Links</span>
+            <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+
+            </a>
+          </h6>
+          <ul class="nav flex-column mb-2">
+            <li class="nav-item"id="conference_committeupdate">
+              <a class="nav-link" href="conference_committeupdate">
+
+                Conference committee
+              </a>
+              <ul class="nav flex-column ml-5">
+                <li class="nav-item"id="committee_details"><a style="color:#000;"href="/committee_details">Committee Details</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item"id="scopeupdate">
+              <a class="nav-link" href="/scopeupdate">
+
+                Scopes
+              </a>
+            </li>
+            <li class="nav-item"id="invitedupdate">
+              <a class="nav-link" href="/invitedupdate">
+
+                Invited Speakers
+              </a>
+            </li>
+            <li class="nav-item" id="registration">
+              <a class="nav-link" href="/registration">
+
+                Registration
+              </a>
+            </li>
+            <li class="nav-item" id="abstractupdate">
+              <a class="nav-link" href="/abstractupdate">
+                Abstract Submission
+              </a>
+            </li>
+            <li class="nav-item" id="programupdate">
+              <a class="nav-link" href="/programupdate">
+                  Program Schedule
+              </a>
+
+              </li>
+              <li class="nav-item" id="impdateupdate">
+                <a class="nav-link" href="/impdateupdate">
+
+                Important dates
+                </a>
+
+                </li>
+                <li class="nav-item" id="brochureupdate">
+                  <a class="nav-link" href="/brochureupdate">
+
+                  Brochure
+                  </a>
+
+                  </li>
+
+          </ul>
+
+
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>Research Group</span>
+            <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+
+            </a>
+          </h6>
+          <ul class="nav flex-column mb-2">
+            <li class="nav-item"id="genomicupdate">
+              <a class="nav-link" href="/genomicupdate">
+                Genomics
+
+              </a>
+            </li>
+            <li class="nav-item"id="Transcriptomicupdate">
+              <a class="nav-link" href="/Transcriptomicupdate">
+
+                Transcriptomics
+              </a>
+            </li>
+            <li class="nav-item"id="proteomicupdate">
+              <a class="nav-link" href="/proteomicupdate">
+
+                Proteomics
+              </a>
+            </li>
+            <li class="nav-item" id="metabolomicupdate">
+              <a class="nav-link" href="/metabolomicupdate">
+
+                Metabolomics
+              </a>
+            </li>
+            <li class="nav-item"id="metagenomicupdate">
+              <a class="nav-link" href="/metagenomicupdate">
+
+                Metagenomics
+              </a>
+            </li>
+            <li class="nav-item" id="pharmacogenomicupdate">
+              <a class="nav-link" href="/pharmacogenomicupdate">
+
+                Pharmacogenomics
+              </a>
+            </li>
+            <li class="nav-item" id="/otherupdate">
+              <a class="nav-link" href="/otherupdate">
+
+                Others
+              </a>
+            </li>
+          </ul>
+
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>Publications</span>
+            <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+
+            </a>
+          </h6>
+          <ul class="nav flex-column mb-2">
+            <li class="nav-item"id="journalupload">
+              <a class="nav-link" href="/journalupload">
+                Journals
+
+              </a>
+            </li>
+            <li class="nav-item"id="bookupload">
+              <a class="nav-link" href="/bookupload">
+
+                Books
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+      </nav>

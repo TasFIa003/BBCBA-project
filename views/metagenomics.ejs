@@ -1,0 +1,16 @@
+<%- include("partials/header"); -%>
+
+<div class="container">
+  <div class="heading text-center">Metagenomics</div>
+  <h2 class="lec1">Group members:</h2>
+  <%metags.forEach(function(metag){%>
+
+
+      <h4><%-metag.groupmembers%></h4>
+
+
+
+
+<%});%>
+</div>
+<%- include("partials/footer"); -%>

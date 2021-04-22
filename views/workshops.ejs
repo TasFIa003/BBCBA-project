@@ -1,0 +1,40 @@
+<%- include("partials/header"); -%>
+<div class="container">
+  <div class="heading text-center">Workshops</div>
+
+
+  <%works.reverse().forEach(function(work){%>
+
+
+
+      <p class="h4 lec1"><%=work.title%></p>
+
+      <p class="h3 lec3">Date :<%=work.day%></p>
+
+      <p class="h4 lec2">Short description:</p>
+
+
+      <p class="boxtable" ><%-work.shortDiscription%></p>
+
+      <p class="dark">Download:</p>
+
+
+      <ul class="link">
+        <li><a href="/uploads/<%=work.file%>"><%=work.file%></a></li>
+      </ul>
+
+
+      <hr>
+
+
+
+
+
+
+
+
+  <%});%>
+
+
+</div>
+<%- include("partials/footer"); -%>

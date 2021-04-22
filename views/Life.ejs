@@ -1,0 +1,32 @@
+<%- include("partials/header"); -%>
+
+<div class="container">
+  <div class="heading text-center">Life Member</div>
+
+
+<%lifes.forEach(function(life,index){  %>
+  <div class="row life">
+    <div class="col-sm-3">
+      <% if(life.image){%>
+        <img class="up-img"src="/uploads/<%= life.image %>" alt="profile picture">
+      <% } %>
+
+    </div>
+    <div class="data1 col-sm-9">
+      <p id="<%=life.name%>"><strong class="h3">Name: </strong><a href="<%=life.homepage%>" target="blank"><%=life.name %></a></p>
+      <p><strong class="h3">Membership ID:</strong> LM-<span><%=index+1%></span></p>
+      <p><strong class="h3">Current Position & Affiliation: </strong><%=life.position %></p>
+      <p><strong class="h3">Masters Research Field & Institution : </strong><%=life.masters %></p>
+      <p><strong class="h3">PhD Research Field & Institution: </strong><%=life.phd %></p>
+      <p><strong class="h3">Areas of Specialization: </strong><%=life.areaOfSpecialization %></p>
+      <p><strong class="h3">Current Research Interest: </strong><%=life.current %></p>
+      <p><strong class="h3">Contact Address & Mobile : </strong><%=life.contact %></p>
+      <p><strong class="h3">Email: </strong><%=life.mail %></p>
+    </div>
+
+  </div>
+  <hr>
+<%});%>
+</div>
+
+<%- include("partials/footer"); -%>

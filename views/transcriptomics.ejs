@@ -1,0 +1,15 @@
+<%- include("partials/header"); -%>
+<div class="container">
+  <div class="heading text-center">Transcriptomics</div>
+  <h2 class="lec1">Group members:</h2>
+  <%trans.forEach(function(tran){%>
+
+
+      <h4><%-tran.groupmembers%></h4>
+
+
+
+
+<%});%>
+</div>
+<%- include("partials/footer"); -%>

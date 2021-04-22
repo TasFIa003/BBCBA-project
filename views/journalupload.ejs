@@ -1,0 +1,62 @@
+<%-include('partials/adminheader'); -%>
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Upload journal</h1>
+
+  </div>
+
+
+
+
+</main>
+</div>
+</div>
+<div class="container">
+  <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+    <form class="" action="/journalupload" method="post">
+
+      <div class="form-group">
+
+        <label>Journals link:</label>
+        <textarea class="form-control"id="editor" name="journals" rows="5" cols="30"></textarea>
+
+
+      </div>
+
+      <button class="btn btn-dark mt-4" type="submit" name="button">Publish</button>
+    </form>
+    <div class="container mt-5 mr-5">
+      <table class="table" border="1">
+        <thead>
+          <tr>
+
+            <th>Journals</th>
+
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%jours.forEach(function(jour){%>
+          <tr>
+
+            <td><%-jour.journals%></td>
+
+
+            <td><a class="delete" href="/jourdelete/<%=jour._id%>">Delete</a></td>
+          </tr>
+            <%});%>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+
+</div>
+
+
+<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+
+<%-include('partials/adminfooter'); -%>

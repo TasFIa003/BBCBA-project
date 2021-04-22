@@ -1,0 +1,35 @@
+<%- include("partials/header"); -%>
+
+<div class="container">
+  <div class="heading text-center">Pending Member</div>
+
+<%pendings.forEach(function(pending,index){  %>
+  <div class="row life">
+    <div class="col-sm-2">
+      <% if(pending.image){%>
+        <img class="up-img"src="/uploads/<%= pending.image %>" alt="profile picture">
+      <% }else{ %>
+          <img class="up-img1" src="/images/logo.jpg" alt="">
+    <%  } %>
+    </div>
+    <div class="data1 col-sm-10">
+      <p><strong>Name:</strong><%=pending.name %></p>
+
+      <p><strong>Membership_id:</strong><span><%=index+1 %></span></p>
+      <p><strong>Current Position & Affiliation:</strong><%=pending.position %></p>
+      <p><strong>Masters Research Field & Institution :</strong><%=pending.masters %></p>
+      <p><strong>PhD Research Field & Institution:</strong><%=pending.phd %></p>
+      <p><strong>Areas of Specialization:</strong><%=pending.areaOfSpecialization %></p>
+      <p><strong>Current Research Interest:</strong><%=pending.current %></p>
+      <p><strong>Contact Address & Mobile :</strong><%=pending.contact %></p>
+      <p><strong>Email:</strong><%=pending.mail %></p>
+    </div>
+
+  </div>
+  <hr>
+<%});%>
+
+</div>
+<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+<%- include("partials/footer"); -%>

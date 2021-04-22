@@ -1,0 +1,15 @@
+<%- include("partials/header"); -%>
+<div class="container">
+  <div class="heading text-center">Genomics</div>
+    <h2 class="lec1">group members:</h2>
+  <%geonomics.forEach(function(geonomic){%>
+
+      <h4><%-geonomic.groupmembers%></h4>
+
+
+<%});%>
+
+
+
+</div>
+<%- include("partials/footer"); -%>

@@ -1,0 +1,42 @@
+<%- include("partials/header"); -%>
+<div class="container">
+  <div class="heading text-center">Seminars</div>
+
+    <%seminars.reverse().forEach(function(seminar){%>
+
+      <div class="row">
+        <p class="h3 lec1"><%=seminar.title%></p>
+
+        <p class="h3 lec3">Date :<%=seminar.day%></p>
+
+        <p class="h3 lec2">Short discription:</p>
+
+
+        <p class="boxtable"><%-seminar.shortDiscription%></p>
+
+        <p class="h3 lec4">Download:</p>
+
+
+        <ul  class="link">
+          <li><a href="/uploads/<%=seminar.file%>"><%=seminar.file%></a></li>
+        </ul>
+
+
+        <hr>
+      </div>
+
+
+
+
+
+
+
+
+
+
+    <%});%>
+
+
+
+</div>
+<%- include("partials/footer"); -%>

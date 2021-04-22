@@ -1,0 +1,12 @@
+<%- include("partials/header"); -%>
+<div class="container">
+  <div class="heading text-center">Softwares</div>
+  <%softs.forEach(function(soft,index){%>
+    <p class="h3"><strong><span><%=index+1%></span>.<%=soft.title%></strong></p>
+    <p class="h4 dark">Downlink links:
+    <li><a href="/uploads/<%=soft.file%>"><%=soft.file%></a></li>
+    </p>
+    <hr>
+  <%});%>
+</div>
+<%- include("partials/footer"); -%>

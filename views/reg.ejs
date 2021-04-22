@@ -1,0 +1,8 @@
+<%- include("partials/header"); -%>
+<div class="container">
+  <div class="heading text-center">Registration</div>
+  <%regabs.forEach(function(regab,index){%>
+    <h4><%=index+1%>.<a href="/uploads/<%=regab.file%>"> <%=regab.file%></a></h4>
+  <%});%>
+</div>
+<%- include("partials/footer"); -%>

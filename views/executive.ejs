@@ -1,0 +1,22 @@
+<%- include("partials/header"); -%>
+<div class="container">
+
+  <div class="heading text-center">Executive Committee of BBCBA</div>
+
+      <div class="h3">
+        <%years.reverse().forEach(function(year,index){%>
+
+              <p class="text-center execute"id="comittee"><a href="/comitte#<%-year.year%>"><strong><%=index+1%>. <%=year.year%></strong></a></p>
+
+        <%});%>
+
+      </div>
+
+
+
+
+  </div>
+
+<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+<%- include("partials/footer"); -%>

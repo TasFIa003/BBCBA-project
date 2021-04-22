@@ -1,0 +1,23 @@
+<%- include("partials/header"); -%>
+<div class="container">
+  <div class="heading text-center">Executive Committee of BBCBA</div>
+
+
+        <%comitties.forEach(function(comittee){%>
+            <h3 id="<%=comittee.year%>"> <strong><u><%=comittee.year%></u></strong></h3>
+            <h4 class="h3" style="color:darkblue; font-weight:bold;"><%=comittee.position%></h4>
+            <p class="h4">
+              <a href="/life#<%-comittee.name%>">
+                <strong><%=comittee.name%></strong>
+              </a>,<%=comittee.insti%>
+            </p>
+
+
+
+        <%});%>
+
+      </div>
+
+
+
+<%- include("partials/footer"); -%>

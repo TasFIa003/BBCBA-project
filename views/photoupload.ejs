@@ -1,0 +1,63 @@
+<%-include('partials/adminheader'); -%>
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Add Photos</h1>
+
+  </div>
+
+
+
+
+</main>
+</div>
+</div>
+<div class="container">
+  <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+    <h4 class="mt-5">Photo upload</h4>
+    <form class="" action="/photoupload" method="post"enctype="multipart/form-data">
+      <div class="form-group">
+      <input  class="form-control" type="file" name="file" value="">
+      <label>Photo title:</label>
+      <input class="form-control"type="text" name="detail" value="" autocomplete="off">
+      </div>
+      <button class="btn btn-dark mt-4" type="submit" name="button">Publish</button>
+    </form>
+    <div class="container mt-5 mr-5">
+      <table class="table">
+        <thead>
+          <tr>
+
+            <th>photo upload</th>
+            <th>Title</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%phts.forEach(function(pht){%>
+          <tr>
+
+            <td><img class="up-img3"src="/uploads/<%=pht.img %>" alt="profile picture"></td>
+            <td><%=pht.detail%></td>
+            <td><a class="delete" href="/galdelete/<%=pht._id%>">Delete</a></td>
+          </tr>
+            <%})%>
+        </tbody>
+
+
+      </table>
+
+    </div>
+
+
+
+
+  </div>
+
+</div>
+
+
+<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+
+<%-include('partials/adminfooter'); -%>

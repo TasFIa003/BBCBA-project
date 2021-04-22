@@ -1,0 +1,35 @@
+<%- include("partials/header"); -%>
+
+<div class="container">
+  <div class="heading text-center">Honorary Member</div>
+
+
+
+<%honorarys.forEach(function(honorary,index){  %>
+  <div class="row life">
+    <div class="col-sm-3">
+      <% if(honorary.image){%>
+        <img class="up-img"src="/uploads/<%= honorary.image %>" alt="profile picture">
+      <% } %>
+
+    </div>
+    <div class="data1 col-sm-9">
+      <p><strong class="h3">Name: </strong><%=honorary.name %></p>
+      <p><strong class="h3">Membership_id: </strong><span><u>HM </u><%=index+1%></span></p>
+      <p><strong class="h3">Current Position & Affiliation: </strong><%=honorary.position %></p>
+      <p><strong class="h3">Masters Research Field & Institution : </strong><%=honorary.masters %></p>
+      <p><strong class="h3">PhD Research Field & Institution: </strong><%=honorary.phd %></p>
+      <p><strong class="h3">Areas of Specialization: </strong><%=honorary.areaOfSpecialization %></p>
+      <p><strong class="h3">Current Research Interest: </strong><%=honorary.current %></p>
+      <p><strong class="h3">Contact Address & Mobile : </strong><%=honorary.contact %></p>
+      <p><strong class="h3">Email: </strong><%=honorary.mail %></p>
+    </div>
+
+  </div>
+  <hr>
+<%});%>
+
+</div>
+<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+<%- include("partials/footer"); -%>

@@ -1,0 +1,52 @@
+<%-include('partials/userheader'); -%>
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Personal Information Update</h1>
+
+  </div>
+
+
+
+
+</main>
+
+<div class="container">
+  <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+    <form class="" action="/userpanel" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+          <label>Name</label>
+          <input class="form-control" type="text" name="name" autocomplete="off">
+          <label>Homepage link</label>
+          <input class="form-control" type="text" name="homepage" autocomplete="off">
+          <label>Current position and Affiliation</label>
+          <input class="form-control" type="text" name="position"autocomplete="off">
+          <label>Masters Research Field & Institution</label>
+          <input class="form-control" type="text" name="masters"autocomplete="off">
+          <label>PhD Research Field & Institution</label>
+          <input class="form-control" type="text" name="phd"autocomplete="off">
+          <label>Areas of Specialization</label>
+          <input class="form-control" type="text" name="areaOfSpecialization"autocomplete="off">
+          <label>Current Research Interest</label>
+          <input class="form-control" type="text" name="current"autocomplete="off">
+          <label>Contact Address & Mobile</label>
+          <input class="form-control" type="text" name="contact"autocomplete="off">
+          <label>Email</label>
+          <input class="form-control" type="email" name="mail"autocomplete="off">
+
+          <label>photo upload</label>
+          <input type="file" name="file" value="">
+
+          <label>Password :</label>
+          <input type="password" name="pass" placeholder="Create new password" id="password">
+
+
+        </div>
+        <button class="btn btn-dark mt-4" type="submit" name="button">Update</button>
+        </form>
+
+
+
+
+
+<%-include('partials/adminfooter'); -%>
