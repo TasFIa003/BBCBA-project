@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const autoIncrement = require('mongoose-auto-increment');
 const multer=require('multer');
 const path=require('path');
+//const nodemailer=require('nodemailer');
 //const date=require(__dirname+'/date.js');
 //const accessControl = require('role-acl');
 //const encrypt = require('mongoose-encryption');
@@ -605,8 +606,46 @@ app.get("/forgotpass",function(req,res){
 });
 
 
+app.post("/forgotpass",function(req,res){
+
+  var mail=req.body.mail;
+
+  Life.findOne({mail:mail},function(err,result){
+    //console.log(mail);
+    if(result.mail===mail){
+      //console.log("ok");
+      res.render("resetpass");
+    }else
+    {
+      //console.log("NOT OK");
+      res.send("please enter your valid mail address")
+    }
+
+  });
 
 
+
+});
+
+
+app.post("/resetpass",function(req,res){
+  var newpass=req.body.repass;
+  var confirm=req.body.confirmpass;
+
+
+
+    if(newpass===confirm){
+      console.log("ok");
+      Life.findOneAndUpdate(Life.pass,{pass:newpass},{new:true},function(err,docs){
+        res.render("userpanel",{pass:docs});
+      });
+
+      //res.redirect("/");
+    }else{
+      console.log("not ");
+    }
+
+});
 
 
 
