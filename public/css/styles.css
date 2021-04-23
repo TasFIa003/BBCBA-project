@@ -171,6 +171,14 @@ body{
 
 
 }
+
+.boxLogin{
+  width: 300px;
+  height: 300px;
+  padding: 50px;
+  border: 1px solid #8bcdcd;
+
+}
 .title1, .title2, .title3 {
   background: #8bcdcd;
   border: solid #8bcdcd 10px;
@@ -178,6 +186,8 @@ body{
   margin: 20px 0 10px 0;
   text-align: center;
 }
+
+
 
 .pre-scrollbar {
   max-height: 330px;

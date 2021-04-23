@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const autoIncrement = require('mongoose-auto-increment');
 const multer=require('multer');
 const path=require('path');
-const date=require(__dirname+'/date.js');
+//const date=require(__dirname+'/date.js');
 //const accessControl = require('role-acl');
 //const encrypt = require('mongoose-encryption');
 
@@ -580,7 +580,7 @@ app.post("/userpanel",upload,function(req,res){
       research:req.body.research,
       file:req.file.filename,
       option:req.body.option,
-    
+
       pass: req.body.pass
 
   });
@@ -598,6 +598,24 @@ app.post("/userpanel",upload,function(req,res){
       });
 });
 
+///////////////forgot password reset password startss ///////////////
+
+app.get("/forgotpass",function(req,res){
+    res.render("forgotpass");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////forgot password reset password ends ///////////////
 
 app.get("/Constitution",function(req,res){
 
@@ -3453,6 +3471,14 @@ app.get("/cndelete/:id",function(req,res){
         }
     });
 });
+
+
+///////////////forgot password reset password starts///////////////
+
+
+
+
+
 app.listen(process.env.PORT || 3000, function() {
   console.log("Server started on port 3000");
 });
