@@ -606,7 +606,7 @@ app.get("/forgotpass",function(req,res){
 });
 
 
-app.post("/forgotpass",function(req,res){
+/*app.post("/forgotpass",function(req,res){
 
   var mail=req.body.mail;
 
@@ -624,6 +624,9 @@ app.post("/forgotpass",function(req,res){
   });
 
 
+
+});*/
+/*app.get("/resetpass",function(req,res){
 
 });
 
@@ -645,7 +648,7 @@ app.post("/resetpass",function(req,res){
       console.log("not ");
     }
 
-});
+});*/
 
 
 

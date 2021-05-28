@@ -243,11 +243,12 @@ body{
 
 @media (min-width: 991px) and (max-width: 1347px)  {
   .navbar-brand {
-        display: none !important;
-    left: 1%;
+        /*display: none !important;*/
+    width:100%;
+    left: 50%;
     position: absolute;
     margin-top: -10px;
-    margin-left: 0;
+    margin-left: 200px;
   }
 }
 
